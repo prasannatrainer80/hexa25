@@ -377,6 +377,46 @@ Combine Result1 + Result2
 
 9 10 11 17 22 29 34 35 53 61 66 76 77 81 89 90
 
+Arrays are static data structures, means once they are assigned we cannot alter
+the size,
+
+but if you want to add the elements irrespective of size at runtime then we need
+the help of linked lists. 
+
+Dynamic Memory allocation will be happened by using Linked Lists. 
+
+The major difference between arrays and linked lists 
+
+if you add/delete element from array all the successive indexes are affected
+
+assume, we have array as
+
+12 5 22 77 23 55
+0  1  2  3 4  5
+
+now if i want to add an element 33 in 3rd position then 
+
+12 5 33 22 77 23 55
+0  1  2  3  4  5  6
+
+
+12 5 22 77 23 55, now if i want to delete element 77
+0  1  2  3  4  5
+
+12 5 22 23 55
+0  1  2  3  4
+
+Now, the above operation, if you want to perform by LinkedList, then 
+
+prev and next nodes are affected remaining elements will not be disturbed.
+
+For accesing records randomly arrays are best
+for insert/update operations, linked lists are best. 
+
+
+
+
+
 
  
 
