@@ -1,0 +1,400 @@
+Today's Topics
+_______________
+
+1) Problem Solving Techniques
+
+2) Data Structure 
+
+
+What is Problem Solving 
+
+The act of defining a problem, determining its cause, identifying, prioritizing
+and selecting alternatives for the solution, and implementing the solution. 
+
+The steps involved in problem solving are 
+___________________________________________
+
+
+1) Analyze the Problem and Understand (Please understand the problem and find out
+what are the inputs are required, what is expected output and what process
+we need to follow) 
+
+2) Select the method to solve the problem : Here, we need to define the 
+algorithm/flow chart/pseudocode to implement the problem. 
+
+3) Design the solution to the problem : Design is the heart for the problem solving
+ensures, what approach to be followed, sequence of steps to be implemented and 
+what are the priority values to be obtained. 
+
+4) Develop the Solution : Convert the design into computer codes, 
+
+5) Test the Solution : Please check all the test cases mandatorily to be passed, then only release the product into the market. 
+
+Problem Classification : 
+_________________________
+
+	There are various types of problem classifications as 
+
+  -> Sequential : Ensures we need to follow the sequence of steps to be 
+followed to solve any problem. 
+
+One of the example for Sequential Based is Withdraw Amount from ATM
+
+	-> Insert Card 
+
+	-> Enter Pin
+
+	-> Select Account Type
+
+	-> Enter Amount
+
+	-> Collect Cash
+
+	-> Collect Card
+
+	-> Exit 
+
+Another example for Sequential Based problem solving is generate payslip 
+
+
+	-> Enter Employee Details
+
+	-> Enter No.of Days they worked
+
+	-> Check type of employee
+
+	-> Generate Payroll
+
+	-> Test the Report
+
+	-> Send Report to Employee
+
+	-> Exit 
+
+
+  -> Distributed : Distributed or Concurrent problem solving ensure, we can 
+parallely solve multiple problems without waiting any problem to solve. 
+
+Example for this all Online Transactions, and Customer care systems are 
+working on Distributed/Concurrent 
+
+As we can send multiple requests to any customer care, as we can raise
+multiple complaints from single account user. 
+
+  -> Concurrent 
+
+  -> Event-Based : This problem to be solved when any recognized work to be done. 
+
+Example : If employee got bonus then we need to add the amount to the payslip.
+
+If employee took leaves the lop needs to be added. 
+
+What are the problem solving Methods : 
+_______________________________________
+
+Brute Force/ Heuristic Approach
+
+	It is a straight forward method of solving problems by trying
+every possible solution until its correct. These algorithms rely on 
+highly utilizing computer resources rather than advanced techiques 
+to improve the efficiency. 
+
+Example : If i want to test a string is matching with another string or not, then 
+if we follow brute force approach takes lot of lines of code to be written. 
+
+They are simple to undertand and implement and gives guarantee of finding correct solution, but they are slow and inefficient for large problem spaces. 
+
+Greedy Approach
+
+	the approach to follow Opmized Solution for the problems. 
+
+This approach helps in constructing a solution for a problem through a 
+sequence of steps where each step considered to be a partial solution, 
+this partial solution is extended to get the complete solution. 
+
+	-> It must be feasible
+	-> It must be optimal
+
+Divide and Conquer : 
+
+	Divide the big problem into smaller instances
+
+	Solve the small instances recursively
+
+	Obtain the solution by combining all these solutions. 
+
+What is Algorithm : 
+___________________
+
+	Step By Step implementation of given problem known as algorithm.
+
+	-> Finiteness
+
+	-> Definiteness
+
+	-> Input
+
+	-> Output
+
+	-> Effectiveness
+
+If you want to improve the efficiency, then the best approach we need to follow is Data Structures. 
+
+Data Structures defined as a way of organizing the various data elements in memory with respect to each other. 
+
+There are various types of data structures as 
+
+	-> Arrays
+
+	-> Linked Lists
+
+	-> Stacks
+
+	-> Queue
+
+	-> Trees
+
+	-> Graphs 
+
+You need to use relevant data structure, helps to improve the efficiency of a program. 
+
+	-> Create standard and reusable code
+
+	-> Creating Programs that are easy to understand and maintan
+
+There are various data structures as
+
+	-> Static	: Arrays
+
+	-> Dynamic 	: Linked Lists
+
+	-> Non-Linear  : Trees 
+
+The factors required to calculate efficiency of given algorithm are : 
+_______________________________________________________________________
+
+	-> Speed of the machine
+
+	-> Compiler
+
+	-> Operating System
+
+	-> Programming Language
+
+	-> Input Data 
+
+
+The execution time of an algorithm is directly proportial to no.of key comparations involved in the algorithm
+
+The rate at which the running time of an algorithm increases as a result of an increase in volume of input data 
+
+The order of growth of algorithm is defined by using Big O notation. 
+
+O(1) -> Ensures the problem solved in 1 step.
+
+O(log n) -> Problem to be solved in log n times
+
+O(n) : ensures problem solved in n steps, assume you have 5 elements then max it solved by 5 steps
+
+O(n log n) : Loglinear 
+
+O(n 2) : It is having quadratic growth means if you have 5 elements problem solved in 25 steps
+
+Data Structures : 
+__________________
+
+Array : An array is the finite ordered set of homogeneous elements, means all the elements belongs to same data type. 
+
+
+All the elements of array are stored in successive memory locations. 
+
+the major drawback with arrays are, once size assigned we cannot alter 
+
+
+Assume, we have a list as 
+
+
+12 5 88 32 82 19 66 76 13 56 34 
+
+Now i want to search for element 76, how to proceed with Linear Search 
+
+
+Step 1 : Compare first element with Search Element, if found fine else 
+	go to next element 
+
+	12 = 76 {wrong}
+
+	5 = 76 {wrong
+
+	88 = 32 {wrong}
+
+	19 = 32 {wrong}
+
+	66 = 32 {wrong}
+
+	76 = 76 {Correct} then print the position 
+
+The efficiency of above algorithm
+
+best case O(1)
+worse case O(n)
+medium case O(n/2) 
+
+The above algorithm inadequate w.r.t. Performance as if the list size increases then difficult to peroform upto the size, then we need to follow with Binary Search Approach. 
+
+
+35 22 89 66 10 77 9 90  17 53 81 61 29 11 34 76 
+
+-> Pivot is 35 
+
+----------------------------------> Find out first greatest element than pivot 89
+<---------------------------------- Find out first smallest element than pivot 34 
+
+Swap
+
+35 22 34 66 10 77 9 90  17 53 81 61 29 11 89 76 
+
+----------------------------------> Find out first greatest element than pivot 66
+<---------------------------------- Find out first smallest element than pivot 11
+
+Swap
+
+35 22 34 11 10 77 9 90  17 53 81 61 29 66 89 76
+
+----------------------------------> Find out first greatest element than pivot 77
+<---------------------------------- Find out first smallest element than pivot 29
+
+Swap
+
+35 22 34 11 10 29 9 90  17 53 81 61 77 66 89 76
+
+----------------------------------> Find out first greatest element than pivot 90
+<---------------------------------- Find out first smallest element than pivot 17
+
+Swap
+
+35 22 34 11 10 29 9 17  90 53 81 61 77 66 89 76
+
+
+----------------------------------> Find out first greatest element than pivot 
+<---------------------------------- Find out first smallest element than pivot 
+
+Both are in correct order, no swap required so break the list 
+
+35 22 34 11 10 29 9 17 -> List 1
+90 53 81 61 77 66 89 76 -> List 2
+
+Take list1 first 
+
+
+35 22 34 11 10 29 9 17
+
+35 as pivot 
+
+---------------------------> Find out first greatest element of pivot (35)
+<---------------------------- Find out first smallest element than pivot (17)
+
+swap
+
+17 22 34 11 10 29 9 35
+
+Separte 35 and take remaining list and apply quick sort
+
+
+17 22 34 11 10 29 9
+
+17 is pivot 
+
+------------------------------> Find out which is first greatest than 17 (22)
+<------------------------------ Find out which is first smallest than 17 (9)
+
+swap
+
+17 9 34 11 10 29 22
+
+------------------------------> Find out which is first greatest than 17 (34)
+<------------------------------ Find out which is first smallest than 17 (10)
+
+swap
+
+17 9 10 11 34 29 22
+
+
+------------------------------> Find out which is first greatest than 17 (34)
+<------------------------------ Find out which is first smallest than 17 (11)
+
+correct order 
+
+break them 
+
+17 9 10 11
+
+9 10 11 17
+
+
+34 29 22 
+
+22 29 34
+
+combine all lsit
+
+9 10 11 17 22 29 34 35 -> Result 1
+
+90 53 81 61 77 66 89 76
+
+separate 90 as its max value
+
+
+76 53 81 61 77 66 89
+
+76 pivot
+
+---------------------> Find out first greatest element than pivot (81)
+<-------------------- Find out first smallest element than pivot (66)
+
+Swap
+
+76 53 66 61 77 81 89
+
+
+---------------------> Find out first greatest element than pivot (77)
+<-------------------- Find out first smallest element than pivot (61)
+
+No swap break them 
+
+76 53 66 61
+
+53 61 66 76
+
+77 81 89
+
+Result 2 : 
+
+53 61 66 76 77 81 89 90 -> Result2
+
+Combine Result1 + Result2
+
+
+9 10 11 17 22 29 34 35 53 61 66 76 77 81 89 90
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+Divide and Conquer 
+
+Dynamic Programming 
+
+
+
+
+
