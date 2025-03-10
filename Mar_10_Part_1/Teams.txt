@@ -1,0 +1,44 @@
+Group 1 :
+_________
+
+Arya Ajay
+Ajay Kumar
+DhanaShree
+Karthik Vikram
+Hemanth Bala    {Car Rental System}
+
+Group 2 : 
+__________
+
+Aayush Anuj Tripathi
+Archana
+BalaSubramani
+Devadarshini
+Karthik Rajaram          {PayXpert}
+
+Group 3 : 
+_________
+
+Aayush Sandeep
+Aditi Sunil
+Charuhasini
+GopalKannan             {Ecommerce}
+Indhuja
+
+Group 4 : 
+__________
+
+Harsh Avinash 
+Anish Ajith                   {Crime Reporting System}
+Arthi C
+Janardhanan
+Christina Michelle Rayan
+
+Group 5 : 
+__________
+
+HarshaVardhan
+Keerthana
+Subhashree                  {Asset Management}
+Kashish 
+Asha
