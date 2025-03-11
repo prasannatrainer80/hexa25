@@ -1,0 +1,102 @@
+Agile :
+_______
+
+1) When the sprint execution completed 
+
+Starts after spring planning and ends before the sprint review 
+
+2) Is Scrum has role as Project Manager
+
+No
+
+3) When the retrospective meeting to be held
+
+End of each sprint meeting 
+
+4) Who is responsible for Product Catalog
+
+Product Owner 
+
+5) Goals of Scrum 
+
+Manage Complexity, Unpredictability and change through visibility, Inspection and Adoption 
+
+6) What actually Product Backlog Contains 
+
+All the requirements and Items are captured in product catalog.
+
+7) What is main characterstsics of Spring Backlog
+
+   -> Once sprint started, please dont add new requirements in current sprint 
+
+   -> Please don't change the end date of sprint 
+
+8) Role of Scrum Master 
+
+    Keeps the team to focus on the goal w.r.t. end dates.
+
+9) Agile Projects Progress can be measured in 
+
+   Sprint Cycles 
+
+10) What will happen in Sprint 
+
+    Product Design, Code, and Test, typical duration is from 2 to 4 weeks, but it can't cross calendar month
+
+11) At the end of Sprint 
+
+   Please conduct Sprint Review Meeting, followed by Sprint retrospective Meeting. 
+
+12) Sprint Backlog will be created at
+
+	Sprint Planning, its not done alone by Scrum Master can be done by collaboratively with team. 
+9) How the Burndown/up chart helps 
+
+   How much amount of work remaining in sprint
+
+   Is all priorities met or not
+
+   What priority work pending in Sprint
+
+   Based on that, what changes you need to do in the next sprint
+
+10) In Spring for every 24 hrs
+
+   Team needs to demonstrate on new requirements. 
+
+11) What Sprint backlog contains
+
+     Committed Functionality. 
+
+12) Who will terminate sprint (extreme cases)
+
+   Product Owner
+
+13) What is BurnDown Chart 
+
+Shows the cumulative work remaining, in sprint day/day 
+
+14) What is Velocity 
+
+Amount of work a team can finish during the time period. 
+
+15) 
+
+
+
+
+Agile :
+________
+
+   1) Regular reviews and you can see the preview of the product. 
+
+   2) Daily Standup Meeting 
+
+   3) User Story 
+
+Git/Unix -> 10
+
+Agile -> 5
+
+MySql -> 35 
+
