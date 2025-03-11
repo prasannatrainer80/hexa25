@@ -1,0 +1,344 @@
+SDLC (Software Development Life Cycle ) 
+
+is a structured process that used to design, develop and test good quality software. 
+
+As Quality always comes w.r.t. Customer Perspective. 
+
+The goal of SDLC life cycle model is to deliver high-quality, maintainable software that meets the user's requirements.  SDLC in software engineering that meets the users requirements, 
+
+SDLC model involves six phases or stages while developing any software
+______________________________________________________________________
+
+Stage 1 : Planning and Requirement Analysis
+
+In this step, please understand the requirements and check for the feasibility 
+w.r.t. Time, manpower and amount w.r.t. will you proceed further or not. 
+Here we need to take inputs from the customer and check for feasibility and 
+takes the relevant decision. 
+
+
+Stage 2 : Defining the Requirements 
+
+	All the requirements w.r.t. software are specified, means what coding
+platform to be used, database to be used and etc... And here you have scope to
+identify the alternatives for the given  software specification. At the end of this phase
+
+SRS(Software Requirement Specification) document will be generated. 
+
+Stage 3 : Design : Design is the heart for the flow of the given project to be maintained. Hence, with the requirements defined in SRS, multiple designs for the product architecture are present in the Design Document Specification (DDS) 
+
+This DDS assessed by market analysts and stakeholders.  As it contains the day-wise plan to be followed to implement the product.
+
+Stage 4 : Development : Here only actual coding task to be implemented We need to use any programming language or ides to implement the given code. 
+
+Step 5 : Testing : We need to conduct extensive testing at every coding stage of project, therefore at this stage, all the probable flaws are tracked, fixed and retested. 
+
+Step 6 : Maintenance : The tested product needs to be executed smoothly in env, that phase comes w.r.t. maintenance. 
+
+What is Validation and Verification 
+
+
+1) Defect : If tester identifies something known as defect.
+
+2) Bug : If programmer accepts the defect known as bug. 
+
+*** All defects are not bugs, all bugs are defects ***
+
+3) Error : If programmer identifies some mistake in your code known as error. 
+
+4) Fatal : If customer identifies some mistake in your code known as fatal. 
+
+
+WaterFall model : This is one of the fine and easiest model to start with SDLC,
+as the project requirements are well-defined and the project goals are clear. It is
+often used for large scale projects with long timelines.
+
+Features : 
+
+1) Sequential Approach
+
+2) Document-Driven
+
+3) High Level Planning 
+
+Drawbacks
+
+1) Suitable for the projects which don't have timelines
+
+2) No New requirements are specified once coding starts
+
+3) You cannot see the preview of the product and only in end you can see product
+working sometimes leads to strange results. 
+
+
+____________________________________________________________________________
+
+Agile is a software development methodology to build a software incremently using
+short iterations of 1 to 4 weeks so that the development process aligned with the 
+changing business rules.  
+
+Instead of a single pass development of 6 to 18 months we have all requirements
+and risks are predicted upfront, Agile adopts a process of frequent feedback where
+a workable product is delivered after 1 to 4 week iteration. 
+
+Agile simply follows 4 principles known as
+
+1) Define
+
+2) Code 
+
+3) Integrate
+
+4) Test 
+
+The major people involved in this process are
+
+1) Scrum Master
+
+	He/She is the senior most person in company as a facilitator who helps the team members to follow agile practices so that they can meet their commitments. 
+
+	The responsibilities of Scrum Master are 
+
+	 -> To enable close co-operation between all roles and functions
+
+	 -> Remove if any gaps exists
+
+	 -> To make the team to stay away from any disturbances and confusions. 
+
+	 -> To ensure the above process to be taken place, we need
+
+		-> Daily Standup Meetings
+
+		-> Planned Meetings
+
+		-> Demo 
+
+		-> Review
+
+		-> Retrospective Meetings 
+
+2) Product Owner : He/She is TL kind one who drives the product from business perspective, the responsibilities of product owner are 
+
+	-> To determine the requirements and prioritize their values
+
+	-> To determine the release dates and contents
+
+	-> To take an active role in iteration planning and release planning meeting
+
+	-> To ensure team is working always on most valued requirement
+
+	-> To represent voice of customer
+
+	-> To accept the user stories that meet the definition of done and defined
+		acceptance criteria 
+
+
+
+3) Functional Team : Based on the project, every agile team should form roles for 
+team members as 3 to 4 developers, 1 tester, 1 tl, 1 product owner, 1 scrum master
+
+How the work got assigned in Agile Metodology
+
+You can specify work allocation in agile, w.r.t. User Story 
+
+A user story is a requirement which defines what required by the user as functionality. 
+
+A user story is a requirement which defines what is required by the user as 
+functionality. 
+
+A userstory contains list of tasks and estimation to be happen in terms of hours. 
+
+A user story talks about what is to be done.  
+
+Task talks about how it is to be done. 
+
+It defines how the functionality is to be implemented 
+
+Each story contains collection of tasks.
+
+User Story divided into tasks when it is planned in current iteration. 
+
+Tasks are estimated in hours 
+
+Assume, we have userstory as EmployOperations :
+
+EmployOperations 
+
+	-> Task1 (EmployRegisteration) 2 hrs  assigned to Arya
+	-> Task2 (EmployLogin) 1 hr         assigned to gopal
+	-> Task3 (ShowEmploy) 1 hr          assigned to Harsh
+	-> Task4 (GeneratePayroll) 4hr      assigned to Ayush
+
+Then they start working on the product 
+
+how to approve the product. 
+e
+when any user-story done, we need to implement acceptance criterial 
+
+All tasks including development and testing are completed
+
+All acceptance tests are running, then only we can accept the product. 
+
+No Open Defect
+
+Product Owner approved story
+
+Happy to Deliver to the client. 
+
+Main Principles of Agile : 
+___________________________
+
+
+-> Customer Satisfaction : A customer can come at anytime with new requirements, 
+and they will be added in specific time 
+
+-> Welcome Change : Any phase we can add new requirements Agile process will increase
+customers competitive advantage.
+
+-> Deliver a working Software : Always you can see working copy at demo time
+
+-> Collaboration : All team members will work together in entire project
+
+-> Motivation : The environment will be provided to support individual team 
+members and trust the  so as to make them feel responsible. 
+
+-> Maintain Constant Pace : Aims towards sustainable development, the business
+developers and users should be able to maintain constant pace with the project
+
+-> Review the work Regularly : Review the work done at regular intervals so 
+that the team can reflect on how to become more effective and adjust its behavior
+
+What is Daily Stand Up ???
+
+	It is a daily status meeting among all team members and it is held 
+		roughly 15 mins
+
+	Every member has to answer 3 questions
+
+		-> What i did yesterday
+	
+		-> What i will do today
+
+		-> Any blockage is there 
+
+Sprint : Each iteration in agile will be called as sprint 
+
+sprint will be for weekly. as here we need to check all the work to be done and after that
+we need to send for sprint clousure.
+
+You need to conduct sprint meeting weekly once, worst case atleast 4 weeks you cannot cross. 
+
+No New requirements will be added in middle of the sprint, always new requirements will be in next sprint. 
+
+Sprint closure will happen with Sprint Meeting followed by Sprint Retrospective meeting
+
+When sprint meeting happens we need to follow certains principles for closure as
+
+MOSCOW 
+
+	-> Must Have
+	
+	-> Should Have
+
+	-> Could Have
+
+	-> Wont Have 
+
+
+What are documents created in sprint 
+
+1) Product Backlog : Product Backlog will be created by product owner, it contains all the user stories w.r.t. Tasks and timelines. 
+
+Now one of the story from the product backlog can be assigned to team members, 
+
+then based on team size Sprint Backlog created. 
+
+Sprint Backlog document will be created by Sprint Planing team during event, product ower selects the tasks to be performed and who needs to work on which module and w.r.t. delivery dates. 
+
+Sprint is heart for agile process 
+
+What operations performed in sprint
+
+   -> Product Design, Code and Test can be done in Sprint
+
+   -> Typical duration for sprint is 2-3 weeks or in calendar month, but preferred to conduct sprint meeting at least once in weekly, then process will be productive
+
+   -> Sprint closure happens based on Sprint Review Meeting followed by Sprint Retrospective Meeting
+
+What is the difference between Sprint Meeting (vs) Sprint RetroSpective Meeting 
+
+-> Sprint Meeting Team presents what is accomplished new in this week
+
+-> Its just like demo kind with working code
+
+-> All team members are present
+
+In Sprint Retrospective Meeting, there is 100% score for discussions 
+
+	-> Inspect and Adapt
+
+	-> Team checks the way they worked in this sprint and identifies pros and cons 
+
+	-> What are the things to be do better will be identied and strategies are defined
+
+Who participate : 
+
+	Scrum Master
+
+	Product Owner
+
+	Team
+
+In this we need to check
+
+1) What went well
+
+2) What Could Have Been Improved
+
+3) Alternate Actions to be taken place 
+
+_________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

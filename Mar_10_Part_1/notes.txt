@@ -413,6 +413,39 @@ prev and next nodes are affected remaining elements will not be disturbed.
 For accesing records randomly arrays are best
 for insert/update operations, linked lists are best. 
 
+Trees are used to handle non-linear data structures. 
+
+How to Form a Binary Tree 
+
+35 22 89 66 10 77 9 90  17 53 81 61 29 11 34 76 
+
+
+Assume, we have the above list as 
+
+Now if you want to represent in form of binary tree 
+
+then take first element as root node. 
+
+The elements which are less than root node to be in left-subtree
+
+The elements which are greater than root node to be in right-subtree
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
