@@ -1,0 +1,189 @@
+ A database is the set of interrelated files, stored with minimum redundancy to serve many users work concurrently. 
+
+DBMS -> Database Management System 
+
+The software which allows you to perform transactions on data like adding new data, modifying already existing data and removing unwanted data is known as dbms. 
+
+Main objects : 
+
+1) Provide an efficient and convenient environment that is used to store data in, and retrive data from a database. 
+
+2) Manage information about users who interact with the DBMS and the activities that these users can perform on data. 
+
+Disadvantages : 
+
+1) Data Redundancy
+2) Risk to data integrity
+3) Data Isolation
+4) Difficult access to data 
+5) Unsatisfactory security measures. 
+
+___________________________________________________________
+
+Data Model : It is the description of the org. of data in the database. It also describes the relationship among the data and any constraints that have to be defined on data. 
+
+Data Models are classified into 2 types known as
+
+1) Object-based logical Model : Focuses on describing the data, and the relationship among the data and any constraints defined. 
+
+2) Record-based logical model : Focuses on describing the data structure and the access techniques in the DBMS. 
+
+Object-baed Logical model : 
+
+The ER model : It is based on the real world perception that comprises a collection of objects or entites and the relationships among the data. 
+
+___________________________________________________
+
+Entity : An entity is a thing, that which can be easily identified. 
+
+There are 2 types of entities, dependent entity and independent entity. 
+
+An entity whose existence is depends on the existence of another entity is called a dependent entity. 
+
+An entity that does not depend on other entity for its existence is called independent entity. 
+
+Dependent entities are also called as weak entities, and independent entities are called regular entities. 
+
+
+Relationships :  Relationship is an association among the entities.  A  relationship instance is an association of entity instance, 
+
+There are 3 types of relationships : 
+
+1) One-to-One
+2) One-to-Many 
+3) Many-to-Many
+
+Attribute : 
+
+An attribute is a property of a given entity, 
+
+SubTypes and SuperTypes : 
+
+A subtype is a subset of another entity, 
+
+A subentity or subtype is always dependent on the supertype for its existence. The attributes of the supertype apply to all of tis subtyps.  
+______________________________________________
+
+
+Record Based Models : 
+
+1) Hierarchical model : Data is represented in the form of tree, data in hierarchical model is represented by a collection of records and relationships between the data are represented by links. 
+
+2) Network Model : similar to hierarchical model in the way that the data and the relationships among them are represented in the form of records and links. You can represent the records in the daabase graphically. 
+
+3) Relational Model : A table in the database has fixed record length with fixed number of attribute or fields. 
+
+
+The row in a table is called tuple and the column is called an attribute. Every column in the table must have a unique name, the no.of tuples is called the cardinality of the table, and the no.of attributes is called the degree of the table. 
+
+The relational model is based on the principle of relational algebra. 
+
+It is a collection of operators that operate on relationships. 
+
+1) Restrict : The Restrict operator extracts specified no.of rows or tuples from the given relationship based on the conditon. 
+
+2) Project : This operator extracts specified attributes or columns from the given relation. 
+
+3) Product : This operator builds a relation from two specified relations. It consists of all possible combinations of tuples, one from each of two relations. 
+
+4) UNION : Builds the relation from tuples appearing in either or both of the specified relations. 
+
+5) DIFFERENCE : Builds the relation of tuples appearing in the first but not in the second. 
+
+6) INTERSECT : Builds a relation consisting of tuples that appear in both relations. 
+
+Attributes :  Do not introduce unnecessary attributes, an attribute serves three purposes. 
+
+1) To identify its owner entity.
+2) To refer to another entity
+3) To simplify the description of an entity. 
+
+
+Keys : A RDBMS uses associative addressing, that is it identifies and lcoates rows by value. The physical address is transparent to the user. Therefore, relational system require keys. 
+
+1) Primary 
+2) Foreign 
+3) Candidate 
+4) Alternate
+5) Composite 
+
+Any attribute that uniquely identifies a row in table is a candidate for the primary key, such an attribute is called candidate key. One of the candidate keys is chosen to be primary key based on familirity.  
+
+Any attribute that is candidate for the primary key but not primary key is called alternate key. When the key is uniquely identifies the rows of the table is made up of more than one attribute, it is called composite key. 
+
+It is imp. to understand that the primary key is the only guaranteed way to identify the rows of a tabhle. Therefore, null avlues are not permitted as primary keys. 
+
+If any database that obeys the following 12 rules then it is considered as truly relational. 
+
+1) Information Representation 
+2) Guaranteed Access
+3) Systematic treatment of null values
+4) Data Description rule
+5) Comprehensive data sublanguage
+6) View Updating 
+7) High level insert, update and delete 
+8) Physical data independence
+9) Logical data independence
+10) Data Destribution Rule
+11) Non-Subversion 
+12) Integrity Rule. 
+
+1) Info. Rep : Ensure any data need to be represented in terms of rows and columns of tables. 
+
+2) Guaranteed Access : Every data value in the relational databae should be logically accessible by specifying a combination of the table name, the primary key value and the column name. 
+
+3) Systematic Treatment of NULL values : DBMS must allow NULL values to support missing or inapplicable info. They must be distinct from zero or spaces. 
+
+4) Data Description rule : The data in the database is the categorized in such a way that system catalog and user catlog. System catalog consists of system objects that are exist at the time of installation. User catalog contains objects that are to be created by the user during working with databases. 
+
+The tables in both catalogs need to contain description and structure of database. These tables are created owned and maintained by the DBMS. Ensure you can give privileges to the tables, and system tables are read-only. 
+
+5) Comprehensive Data Sublanguage : This rule states that the system must support all the following functions : 
+
+ 1) Data Definition
+ 2) View Definition
+ 3) Data Manipulation operations
+ 4) Security and Integrity constraints
+ 5) Transaction Management Operations. 
+
+6) View Updating : All views that are theoretically updateable must be updateable by the system. 
+
+7) High level insert,update and delete : Ensures that rows should be treated as sets in insert, update and delete operations.  IT stresses on the set-oriented nature of database. 
+
+8) Physical data independence :  Application programs must remain unimpaired when any changes are made in the storage representation or access methods. 
+
+9) Logical Data Independence : Changes should not affect the user's ability to work with the data. 
+
+10) Data Distribution rule : Databases must ;allow manipulation of distributed data located on other computer system. 
+
+11) NonSubversion : States that different levels of the language cannot subvert or bypass the integrity rules and constraints.  The DBMS must ensure that no other level can bypass the constraints specified to maintain the integrity of the database. 
+
+12) Integrity Rule : Integrity constraints must be storable in the system catalog. 
+
+__________________________________________________________
+
+Normalization : It is process of reducing the ;redundancy of data in a relational database. 
+
+Redundancy means repetition of data. It inicrease the time involved in updating, adding and deleting data. It also increases the utilization of disk space. 
+
+
+Redundancy can also lead to : 
+
+-> Update anomalies : inserting, updating and deleting data may cause inconsistencies. 
+
+-> Inconsistencies -> Erros are more likely to occur when facts are repeated. 
+
+-> Unnecessary utilization of disk space. 
+
+Normalization is the scientific method of breaking down complex table structures into simple table structures by using certain rules. 
+
+Some rules that should be followed to acheive a good database design are : 
+
+-> Each table should have an identifier
+-> Each table should store data for a single type of entity.
+-> Columns that access nulls should be avoided. 
+-> The repetition of values or columns should be avoided. 
+
+
+
+
