@@ -1,0 +1,211 @@
+Normalization : It is a scientific method of breaking down the complex table structures into simple table structures, by using certain rules. 
+
+In Normalization, we have various forms as
+
+1) First Normal Form
+
+2) Second Normal Form
+
+3) Third Normal Form 
+
+Before breaking into tables, first you need to check anomalies as 
+
+Insert
+
+Update
+
+Delete 
+
+Normalization is a scietific method of breaking down the complex table structures into simple table structrues by using certain rules.  Using this method, you can reduce the redundancy in a table and eliminate the problems of inconsistency and disk space usage.  
+
+Rules that should be followed to achieve a good database design are : 
+
+1) Each table should have an identifier
+2) Each table should store data for a single type of entity.
+3) Columns that accept NULLs should be avoided. 
+4) The Repetition of values or columns should be avoided. 
+
+
+First Normal Form : 
+
+A table is said to be in the 1NF when each cell of the table contains precisely one value(Atomic Values) 
+
+EmployDetails(Ecode,Empname,Salary,DeptNo,DEPTHEAD,PROJCODE,HOURS)
+
+
+Assume, we have data as employees may work in multiple projects 
+
+E001,Anu,87772,D123,Murugan,{P100,P123,P777},{99,777,272}
+
+By Applying 1NF 
+
+E001,Anu,87772,D123,Murugan,P100,99
+E001,Anu,87772,D123,Murugan,P123,777
+E001,Anu,87772,D123,Murugan,P777,272
+
+INSERT : Employee Records are not inserted until he/she got assigned with project 
+
+UPDATE : The DeptCode, DeptHead values are repeated multiple times, now if any DeptHead moves to another Dept, then the change needs to be reflected in all your corresponding records, its tedious 
+
+DELETE : If employee project got completed, then the record to be deleted, then the employee details and the dept he belongs also to be deleted. 
+
+*** First Normal Form Inadequate in this situation ****
+
+So, we need to switch to 2NF. 
+
+
+Second Normal Form (2NF) : A table said to be in 2NF, at first it must be in 1NF, and every attribute in table functionally dependent on whole key, but not part of the key. 
+
+Guidelines : 
+_____________
+
+	-> Find and remove attributes that are not functionally depend on whole key
+	-> Group the remaining attributes. 
+
+
+EmployDetails(Ecode,Empname,Salary,DeptNo,DEPTHEAD,PROJCODE,HOURS)
+
+In above table take Ecode as primary key{whole key} then we need to check functional dependency as 
+
+Ecode -> EmpName (Yes)
+Ecode -> Salary (Yes)
+Ecode -> DeptNo (Yes)
+Ecode -> DeptHead (Yes)
+Ecode -> ProjCode (No) 
+Ecode -> Hours (No) 
+
+Employ(Ecode+, EmpName, Salary, DeptNo, DeptHead) 
+Project(ProjCode+,Ecode-,Hours) 
+
+Third Normal Form : A table said to be in 3rd Normal Form, at first it must be in 2NF, every attribute need to depend on whole key but not transitively. 
+
+Employ(Ecode+, EmpName, Salary, DeptNo, DeptHead) 
+Project(ProjCode+,Ecode-,Hours) 
+
+INSERT : We cannot enter Dept Details until employee exists, as its transitive dependency
+
+Update : If DeptHead moves to another dept, then the change needs to be reflected to all corresponding employees
+
+Delete : If Employee resigns, his dept details also to be lost. 
+
+2NF inadequate 
+
+3NF Functional Dependency Says : 
+
+	-> Find and remove attributes that are transitively depend on whole key
+	-> Group the remaining attributes 
+
+By Applying 3NF 
+
+
+Employ(Ecode+, EmpName, Salary, DeptNo, DeptHead) 
+
+Ecode -> Empname (Yes)
+Ecode -> Salary (Yes)
+Ecode -> DeptCode -- DeptCode exists even employee not there so (NO)
+Ecode -> DeptHead -- No
+
+Dept(DeptNo+,DeptHead)
+Employ(Ecode+,DeptNo-,DeptHead)
+Project(ProjectCode+,Ecode-,Hours)
+
+_________________________________________________________________________________
+
+
+Hospital(HospitalId,DoctorId,HospitalName,HospEmail,HospMobile,
+PatientId,PatientName,Disease,DoctorName,DoctorQual) 
+
+
+H001,{D001,D002,D003},'Padmaja Hosp','padmaja@gmail.com','83828344',
+{P001,P002,P003},{'Anu','Mani','Saikesh'},{'Fever','LungInf','Kidney},
+{'Shalini','Padmaja','Prabhakar'},{MS,MBBS,MS} 
+
+First Normal Form : A table said to be in 1NF, as each cell contains precisely one value(Atomic Values) 
+
+By Applying 1NF 
+
+
+H001,D001,'Padmaja Hosp','padmaja@gmail.com','83828344',
+P001,'Anu','Fever',Shalini,MS
+
+H001,D002,'Padmaja Hosp','padmaja@gmail.com','83828344',
+P002,'Mani','LungInf','Padmaja',MBBS 
+
+H001,D003,'Padmaja Hosp','padmaja@gmail.com','83828344',
+P003,'Saikesh','Kidney,'Prabhakar',MS
+
+Hospital(HospitalId,DoctorId,HospitalName,HospEmail,HospMobile,
+PatientId,PatientName,Disease,DoctorName,DoctorQual) 
+
+INSERT : We cannot enter Doctor Details till patient Details Exists
+
+UPDATE : Doctor Details are repeated multiple times, (DoctorId,Name,Qual), if doctor transfers then the change needs to be reflected in all corresponding records 
+
+DELETE : If any patient discharges then the doctor and hospital details also deleted 
+
+So 1NF inadequate 
+
+2NF : A table said to be in 2NF, at first it must be in 1NF, and every attribute needs to functionally depend on whole key, but not part of the key. 
+
+DoctorId -> HospitalId (Yes)
+DoctorId -> HospitalName (Yes)
+DoctorId -> HospitalEmail (Yes)
+DoctorId -> HospEmail (Yes)
+DoctorId -> PatientId (No)
+DoctorId -> PatientName (No)
+DoctorId -> Disease (No)
+DoctorId -> DoctorName (Yes)
+DoctorId -> DoctorQual (Yes) 
+
+Functional Dependency : 
+
+	-> find and remove attributes, that are functionally depend on whole key
+	-> group the remaining attributes. 
+
+Doctor(DoctorId+,DoctorName,DoctorQual,HospitalId,HospitalName,HospitalEmail)
+Patient(PatientId+,DoctorId-,PatientName,Disease)
+
+Insert : Hospital Details are not entered until doctor details come (transitive dep) 
+
+Update : DoctorDetails repeated multiple times, if any update to be taken place in all records its tedious
+
+Delete : If doctor resigns, all hospital details lost. 
+
+
+2NF Inadequate 
+
+3NF : A table said to be in 3NF, at first it must be in 2NF, and every attribute needs to depend on whole key but not transitively.
+
+Guidelines : 
+
+	-> Find and remove attributes that are not transitively depend on whole key
+	-> Group the remaining attributes.
+
+
+Doctor(DoctorId+,DoctorName,DoctorQual,HospitalId,HospitalName,HospitalEmail)
+
+Hospital(HospitalId+,HospitalName,HosptalEmail,HospitalMobile)
+Doctor(DoctorId+,DoctorName,DoctorQual,HospitalId-)
+Patient(PatientId+,DoctorId-,PatientName,Disease)
+
+
+Keyword : 
+
+1NF : Atomic Values
+
+2NF : Functional Dependency
+
+3NF : Transitive Dependency 
+
+
+
+ 
+
+
+
+
+
+
+
+
+
