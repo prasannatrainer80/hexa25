@@ -1,0 +1,353 @@
+sowjanya
+madhuri
+satish
+narasimha
+swapna
+_______________________________________________________
+
+Normalization is a scietific method of breaking down the complex table structures into simple table structrues by using certain rules.  Using this method, you can reduce the redundancy in a table and eliminate the problems of inconsistency and disk space usage.  
+
+Rules that should be followed to achieve a good database design are : 
+
+1) Each table should have an identifier
+2) Each table should store data for a single type of entity.
+3) Columns that accept NULLs should be avoided. 
+4) The Repetition of values or columns should be avoided. 
+
+First Normal Form : 
+
+A table is said to be in the 1NF when each cell of the table contains precisely one value. 
+
+For example
+
+PROJECT(Ecode,Dept,DEPTHEAD,PROJCODE,HOURS)
+
+E101 WEB  E901   P27,P51,P20 90 121 60
+
+This data is not normalized, because PROJCODE and HOURS have more than one value. 
+
+By applying the first normal form, you can get the data as
+
+E101 WEB E901 P27 90
+E101 WEB E901 P51 121
+E101 WEB E901 P20 60
+
+Functional Dependency : 
+
+Given a relation R, attribute A is functionally dependent on attribute B if each value of A in R is associated with precisely one value of B.
+
+Otherwise, Attribute A isw functionally dependent on B iff, for each value of B, there is exactly one value of A. 
+
+EMP(ECODE,NAME,CITY)
+
+E1  Satish NewYork
+E2  Swapna Washington
+E3  Narasimha Detroit
+
+Given the particular value of CODE< there is precisely one corresponding value for NAME.  
+
+The attribute code is determinant.  You can also say that CODE determines CITY and NAME. 
+
+
+Second Normal Form : A table is said to be in 2NF, when it is in 1NF and every attribute in the row is functionally dependent upon the whole key, and not just part of the key. 
+
+For example
+
+PROJECT(Ecode,Dept,DEPTHEAD,PROJCODE,HOURS)
+
+E101 WEB  E901   P27,P51,P20 90 121 60
+
+This situation could lead to the following problems : 
+
+1) Insertion : The department of the particular employee cannot be recorded until the employee is assigned a project. 
+
+2) Updation : The Employee Code, Department Name, and department head are repeated several times, if an employee is transferred to another dept. this change will have to be recorded in every row of the EMPLOYEE table pertaining to that employee. 
+
+3) Deletion : When an employee completes work on the project, the employee's record to be deleted. The info. regarding the department to which the emplyee belongs will also to be lost. 
+
+Guidelines : 
+
+-> Find and remove attributes that are functinally dependent on only a part of the key and not on the whole key. 
+-> Group the remaining attributes. 
+
+EMPLOYEEDEPT(ECODE,DEPT,DEPTHEAD)
+PROJECT(ECODE,PROJCODE,HOURS)
+
+Third Normal Form : A table is said to be in the 3NF, when it is in the 2NF and every non-key attribute is functinally dependent only on the primary key.
+
+
+EMP(ECODE,DEPT,DEPTHEAD)
+
+Ensure ECODE contains precisely one value, then 
+
+The problems with dependencies of this kind are : 
+
+1) Insertion : The DEPTHEAD of a new dept that does not have any employees at the present cannot be entered in the DEPTHEAD column. 
+
+2) Updation : the DEPTHEAD is repeated several times, hence if a dept head moves to another dept, the change will have to be made consistently across the table. 
+
+3) Deletion : If the record of the employee is deleted, then the information regarding the head of the dept will also to be deleted. Hence there will be a loss of information. 
+
+Guidelines for Converting a Table to 3NF : 
+
+-> Find and remove non-key attributes that are functionally dependent on the attribute that are not the primary key and place them in different table. 
+
+-> Group the remaining attributes. 
+
+EMP(ECODE,DEPT)
+DEPT(DEPT,DEPTHEAD)
+
+BCNF : The Original definition of 3NF was inadequate in some situations
+
+-> That had multiple candidate keys.
+-> where multiple candidate keys were composite
+-> Where multiple candidate keys are overlapped. 
+
+A relation is in the BCNF iff every determinant is a candidate key. 
+
+PROJECT(ECODE,NAME,PROJECTCODE,HOURS)
+
+In this ECODE+PROJCODE is the primary key, 
+
+Guidelines for converting the table into BCNF is : 
+
+-> Find and remove the overlapping candidate keys, places the part of the candidate key and the attribute it is functionally dependent on, in a different table. 
+-> Group the remaining items into a table. 
+
+EMPLOYEE(ECODE,NAME)
+PROJECT(ECODE,PROJCODE,HOURS)
+
+_______________________________________________________
+
+Data Type specifies the type of data that an object can contain, such as character data or integer data. 
+
+int, float, datetime, char(size),varchar(size),image, nvarchar,xml 
+
+_________________________________________________________
+
+
+The Select statemengt is used for accessing and retrieving data from the database. 
+
+1) Display all records of emptest table. 
+
+Ans : Select * from emptest
+
+2) Display all records whose basic > 20000
+
+Ans : select * from emptest where basic > 20000
+
+3) Display nam,basic from emptest table 
+
+select nam,basic from emptest
+
+________________________________________________________
+
+Range Operators : 
+
+1) Between : Used to specify the test range. 
+
+2) Not Between : Used to specify the test range to which the values in the search result do not belong. 
+
+________________________________________________________
+
+Retrieve records that contain any avlue from the given set of values. 
+
+select nam,basic from emptest where dept in('java','asp')
+
+_______________________________________________________
+
+The like keyword matches the given character string with the specified pattern. The pattern can include combination of wildcard charactes and regular characters. 
+
+You need to used % wildcard character for the query whose name starts with specific pattern. 
+
+_________________________________________________________
+
+If you want to retrieve the values to be displayed in a sequence, then 
+
+you need to use ORDER BY clause for that. 
+
+select * from emptest order by nam
+
+select top 3 * from emptest order by basic desc
+
+select dept from emptest
+
+select distinct dept from emptest
+
+The distinct keyword is used to display the values without the duplicate values. 
+
+Using Functions to customize the result-set : 
+
+ascii -> Returns the ascii code for the left character specified. 
+
+select 'ASCII CODE'=ascii('A')
+
+char -> Returns the characters equivalent of the ASCII code value. 
+
+CharIndex -> Returns the index position where the specified pattern is found. 
+
+select charindex('E','HELLO')
+
+DIFFERENCE -> compares two strings and evaluates the similarity between them, returning a value from 0 through 4. The value 4 is the best match.
+
+select difference('WELCOME','wel')
+
+Left : Returns the specified no.of left chars. 
+
+select left('satish',4)
+
+Right : Returns the specified no.of right-side chars. 
+
+select right('welcome',5)
+
+len : used to display the length. 
+
+select len('welcome')
+
+reverse : Returns the revers of the char_expr. 
+
+select reverse('prasanna')
+
+_________________________________________________________
+
+Date Functions : 
+
+getdate() -> Used to display the today's date. 
+
+datepart() -> Used to display the specific part of the current date. 
+
+datename() -> Returns the date part of the listed date, as a char value. 
+
+dateadd() -> Adds the no.of date parts to the date. 
+
+
+datediff() -> Used to find the difference in days in terms of years, months and days. 
+
+_________________________________________________________
+
+Mathematical Functions : 
+
+1) ABS -> Returns absolute value. 
+
+2) floor -> Returns the largest integer value less than or equal to the specified value. 
+
+3) power -> Returns the value of the numeric_expression to the value of y.
+
+4) round -> Returns the expression rounded off to the length specified as an integer expression. 
+
+5) sqrt -> Returns the square root of the specified value. 
+
+_________________________________________________________
+
+You can summarize the data by using the aggregate functions 
+
+1) sum -> Returns the sum total values in a numeric expression. 
+
+2) avg -> Returns the average of avlues in a numeric expression, either all or distinct. 
+
+3) count -> Returns the no.of values in the expression. 
+
+4) max -> Returns the highest value in the expression. 
+
+5) min -> Returns the lowest value in the expression. 
+
+___________________________________________________________
+
+Grouping Data : 
+
+You need to view the data matching specific criteria to be displayed together in the result set. 
+
+You can group the data by using GROUP BY, COMPUTE, COMPUTE BY etc...
+
+GROUP BY : This clause summarizes the result set into groups as defined in the query by using aggregate functions. The HAVING clause further restricts the result set to produce the data based on condition. 
+
+COMPUTE and COMPUTE BY clause : 
+
+The COMPUTE clause, with the select statement, is used to generate summary rows by using aggregate functions in the query results. The COMPUTE BY Clause can be used to calculate summary values of the result set on a group of data. 
+
+__________________________________________________________
+
+DDL commands -> Data Definition Language. 
+
+create, alter, drop, truncate 
+
+
+You can create a table by using 
+
+create table <table-name> 
+
+emp(empno,nam,dept,desig,basic)
+
+create table emp
+(
+   empno int,nam varchar(15),dept varchar(15),
+   desig varchar(15),basic int
+)
+
+The guidelines for creating table : 
+
+-> The column names within the table must be unique, but the same column name can be used in different tables within a database. 
+
+-> The table name can be of max. 128 chars. 
+
+__________________________________________
+
+
+Data Integrity : It is imp. to ensure that the data stored in tables is complete and consistent.  The concept of maintaining consistency and completeness of data is called data integrity.  It is enforced to ensure that the data in the database is accurate, consistent and reliable.  
+
+1) Entity Integrity : Ensures that each row can be uniquely identified by an attribute called the primary key. The primary key column contains unique value in all the rows. This column cannot be NULL. 
+
+2) Domain Integrity : Ensures that only a valid range of values is stored in a column. It can be enforced by restricting the type of data.  For suppose the dept field need to contain the list of values as 'computers' or 'physics' or 'maths' then it is coming under the part of domain integrity. 
+
+3) Referential Integrity : Ensures that the values of the foreign key match the values of the corresponding primary key. 
+
+4) User-defined Integrity : Refers to a set of rules specified by a user, which do not belong to the entity, domain and referential integiry categories. 
+
+_________________________________________________________
+
+If you want to get the help about the particular table, 
+
+then you need the help of 
+
+sp_help table_name 
+
+inserting the data into a table : 
+
+You can insert the data by using insert statement. 
+
+syntax : 
+
+insert into <table-name> values(val1,val2,.....)
+
+insert into emp values(1,'satish','asp','teamlead',39000)
+
+insert into emp values(2,'narasimha','vb','developer',28484)
+
+
+Updating the data : 
+
+You can update the records of a table by using Update command. 
+
+update table_name set field1=newvalue,field2=newvalue ...
+where condition.
+
+
+Deleting the data : 
+
+You can delete the data by using 
+
+delete from table-name where condition. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
