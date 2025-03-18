@@ -1,0 +1,356 @@
+
+-- MODULE 1
+
+-- 1) Display records from students (Batch-wise total no.of students exists)
+	SELECT BCODE, COUNT(ROLLNO) AS TOTAL
+	FROM STUDENTS
+	GROUP BY BCODE;
+
+
+-- 2) Display total payment paid by all students from payment table student-wise
+	SELECT ROLLNO,SUM(AMOUNT)
+	FROM PAYMENTS
+	GROUP BY ROLLNO;
+
+
+-- 3) Display total no.of records from Payment table
+	SELECT COUNT(*) AS TOTAL_RECORDS
+	FROM PAYMENTS;
+
+
+-- 4) Display total no.fo records from payment table, by eliminating duplicate student No
+	SELECT COUNT(DISTINCT ROLLNO) AS TOTAL_RECORDS
+	FROM PAYMENTS;
+
+
+-- 5) Display the ccode, max(stdate) from batches table.
+	SELECT CCODE, MAX(STDATE)
+	FROM BATCHES;
+
+
+-- 6) Display max. fee from Course table. 
+	SELECT MAX(FEE) AS MAXIMUM
+	FROM COURSES;
+
+
+-- 7) Display max. fee from Course table w.r.t. Ccode 
+	SELECT CCODE, MAX(FEE) AS MAXIMUM
+	FROM COURSES
+	GROUP BY CCODE;
+
+
+-- 8) Display total courses from batches table which are started in last 3 months
+	SELECT COUNT(BCODE)
+	FROM BATCHES
+	WHERE STDATE >= '2020-11-11';
+
+
+-- 9) Display all courses from batches table w.r.t. Ccode (min 2 entries required)
+	SELECT *
+	FROM BATCHES
+	GROUP BY CCODE
+	ORDER BY CCODE;
+
+
+-- 10) Display all records from batches table, which courses are started last 3 months 
+-- and min. 2 records to be entered. 
+	SELECT * FROM BATCHES
+	WHERE STDATE >= '2019-11-11';
+
+
+-- 11) Display information from course_faculty table, as which faculty taking how many courses in ascending order w.r.t. Count
+	SELECT COUNT(BATCHES.FACCODE), COUNT(BCODE) 
+	FROM COURSE_FACULTY
+	INNER JOIN FACULTY ON COURSE_FACULTY.FACCODE=FACULTY.FACCODE
+	INNER JOIN BATCHES  ON FACULTY.FACCODE=BATCHES.FACCODE
+	ORDER BY COUNT(FACCODE);
+
+
+
+-- MODULE 2
+
+-- 1) _HAVING_ clause is used to select groups based on condition. 
+
+
+-- 2) Select count(*) from students;  Is it a valid query.
+      YES
+
+-- 3) What is the order of WHERE, GROUP BY and ORDER BY.
+      WHERE -> GROUP BY -> ORDER BY
+
+
+-- 4) Display ROLLNO of students who have paid for more than twice.
+	SELECT ROLLNO
+	FROM PAYMENTS
+	GROUP BY ROLLNO
+	HAVING COUNT(*) > 2;
+
+
+-- 5) Display average time taken for subject ORA.
+	SELECT AVG(DURATION)
+	FROM COURSES
+	WHERE NAME='ORACLE';
+
+
+-- 6) Display faculty who can take more than 2 courses.
+	SELECT * FROM FACULTY
+	WHERE FACCODE = ANY
+	(SELECT FACCODE FROM BATCHES GROUP BY FACCODE HAVING COUNT(*)>1);
+
+
+-- 7) Display least course fee.
+	SELECT CCODE,NAME,MIN(FEE) AS MINIMUM
+	FROM COURSES;
+
+
+-- 8) Display the number of months between first and last batches of course Java.
+	SELECT FLOOR(DATEDIFF(MAX(ENDDATE),MIN(STDATE))/30)
+	FROM BATCHES
+	WHERE CCODE=5;
+
+
+-- 9) Display Year, course and number of batches of that course.
+	SELECT date_format(STDATE,'%Y'), CCODE, COUNT(*)
+	FROM BATCHES
+	WHERE CCODE=5;
+
+
+-- 11) Display the number of students joined in each month.
+	 SELECT DATE_FORMAT(DJ,'%M'),COUNT(ROLLNO)
+	 FROM STUDENTS
+	 GROUP BY DATE_FORMAT(DJ,'%M');
+
+
+-- 12) Display the number of students joined in each month  of the current year.
+	  SELECT DATE_FORMAT(DJ,'%M'),COUNT(ROLLNO)
+	  FROM STUDENTS
+	  GROUP BY DATE_FORMAT(DJ,'%M %Y');
+
+
+
+-- MODULE 3
+
+-- 1) Display all matching records from batches and Courses table. 
+	  SELECT *FROM BATCHES
+	  INNER JOIN COURSES ON BATCHES.CCODE=COURSES.CCODE; 
+
+
+-- 2) Display matching/unmatching records from batches and courses table.
+	  SELECT * FROM BATCHES
+	  LEFT JOIN COURSES ON BATCHES.CCODE=COURSES.CCODE;
+
+
+-- 3) Display all matching records ascending order of stdate
+	 SELECT * FROM BATCHES
+	 INNER JOIN COURSES ON COURSES.CCODE=BATCHES.CCODE
+	 ORDER BY STDATE ASC;
+
+
+-- 4) Display all matching and unmatching records from batches, courses and faculty table. 
+	 SELECT * FROM BATCHES
+	 LEFT JOIN COURSES ON BATCHES.CCODE=COURSES.CCODE
+	 LEFT JOIN FACULTY ON BATCHES.FACCODE=FACULTY.FACCODE;
+             
+       
+       
+-- MODULE 4
+
+-- 1) What is required to join two tables?
+          Two Tables with matching columns and a JOIN condition
+
+-- 2) What is meant by self-join?
+          A table joined with itself is called Self Join.
+
+
+-- 3) How do you qualify a column that is existing in two or more tables that are being joined?
+         One table must contain a column that is a reference for the other table.It can be done by using 'Table_name.Column_name'.
+
+
+--4) What is table alias? Is it stored anywhere?
+         Alias is used to temporarily assign another name to a table or column for the duration of a SELECT query. They are stored in ~/. bashrc (bash) or ~/
+
+
+--5)What happens when you join two tables without any condition?
+        Joining two tables without any condition will lead to the cross product of the two tables. and The output of two cross joined tables without any condition will be n* m where n and m are number of records in two tables.
+
+
+-- 6) Display rollno, student name, pay date and amount paid.
+	  SELECT PAYMENTS.ROLLNO, STUDENTS.NAME, DP, AMOUNT
+	  FROM STUDENTS 
+	  INNER JOIN PAYMENTS 
+	  ON STUDENTS.ROLLNO=PAYMENTS.ROLLNO;
+
+
+-- 7) Display rollno , student name, batch code ,  stdate of batch  and faculty code.
+	  SELECT ROLLNO, NAME, BATCHES.BCODE, STDATE, FACCODE
+	  FROM BATCHES 
+	  INNER JOIN STUDENTS
+  	  ON BATCHES.BCODE=STUDENTS.BCODE; 
+
+
+-- 8) Display rollno , student name, course name  ,  stdate  of batch  and faculty code.
+  	  SELECT ROLLNO, STUDENTS.NAME, COURSES.NAME, STDATE, FACCODE
+	  FROM BATCHES 
+	  INNER JOIN STUDENTS ON BATCHES.BCODE=STUDENTS.BCODE
+	  INNER JOIN COURSES ON BATCHES.CCODE=COURSES.CCODE; 
+
+
+-- 9) Display rollno , student name, course name , faculty code and enddate of all batches that were completed.
+	  SELECT ROLLNO, STUDENTS.NAME, COURSES.NAME , ENDDATE, FACCODE
+	  FROM BATCHES
+	  INNER JOIN STUDENTS ON BATCHES.BCODE=STUDENTS.BCODE
+	  INNER JOIN COURSES ON BATCHES.CCODE=COURSES.CCODE
+	  WHERE ENDDATE IS NOT NULL;
+
+
+-- 10) Display students who have got more number of characters in name than the student with roll number 10.
+	  SELECT NAME 
+	  FROM STUDENTS 
+          WHERE LENGTH(NAME)>(SELECT LENGTH(NAME) FROM STUDENTS WHERE ROLLNO=10);
+
+
+-- 11) Display rollno, student name, email , pay date and amount paid.
+	  SELECT PAYMENTS.ROLLNO, STUDENTS.NAME, STUDENTS.EMAIL, DP, AMOUNT
+	  FROM PAYMENTS 
+	  INNER JOIN STUDENTS ON PAYMENTS.ROLLNO=STUDENTS.ROLLNO;
+
+
+-- 12) In previous query include the details of student who haven’t paid anything so far.
+	  SELECT PAYMENTS.ROLLNO, STUDENTS.NAME, STUDENTS.EMAIL, DP, AMOUNT
+	  FROM PAYMENTS
+	  INNER JOIN STUDENTS ON PAYMENTS.ROLLNO=STUDENTS.ROLLNO
+    	  WHERE PAYMENTS.ROLLNO <> ALL(SELECT PAYMENTS.ROLLNO FROM PAYMENTS);
+
+
+-- 13) Display the details of students who have paid nothing so far.
+   	  SELECT * FROM STUDENTS
+	  WHERE ROLLNO <> ALL(SELECT PAYMENTS.ROLLNO FROM PAYMENTS);
+    
+          
+          
+-- MODULE 5
+             
+-- 1) Get the details of students who have paid today.
+	  SELECT *
+	  FROM STUDENTS
+	  INNER JOIN PAYMENTS ON STUDENTS.ROLLNO=PAYMENTS.ROLLNO
+	  WHERE DP=CURDATE();
+
+
+-- 2) Display the details of batches handled by faculty name ‘Kevin Loney’.
+	  SELECT FACULTY.NAME,BCODE,CCODE,BATCHES.FACCODE,STDATE,ENDDATE,TIMING 
+	  FROM BATCHES
+	  INNER JOIN FACULTY ON BATCHES.FACCODE=FACULTY.FACCODE 
+	  WHERE FACULTY.NAME='KEVIN LONEY';
+
+
+-- 3) display the details of the faculty members who have not taken any batch in the last three months.
+	  SELECT * FROM FACULTY
+	  WHERE FACCODE = ALL (SELECT FACCODE FROM BATCHES WHERE ENDDATE IS NOT NULL    	  AND FLOOR(datediff(CURDATE(),ENDDATE)/30)>3);
+
+
+-- 4) displays the details of batches that are taken by faculty with qualification MS or the course fee is more than 5000.
+	  SELECT * FROM BATCHES 
+	  WHERE FACCODE = ANY(SELECT FACCODE FROM FACULTY WHERE QUAL LIKE 'MS %')
+	  OR CCODE = ANY(SELECT CCODE FROM COURSES WHERE FEE>5000);
+
+
+-- 5) displays the details of the students who belong to batches that are taken by faculty with qualification MS.
+	  SELECT * FROM STUDENTS
+	  WHERE BCODE = ANY (SELECT BCODE FROM BATCHES WHERE FACCODE = ANY
+	  (SELECT FACCODE FROM FACULTY WHERE QUAL LIKE 'MS %'));
+
+
+-- 6) displays the details of the batches that have taken maximum duration among the batches of the same course.
+	  SELECT BATCHES.*, MAX(DURATION) AS MAXIMUM
+	  FROM COURSES
+	  INNER JOIN BATCHES ON COURSES.CCODE=BATCHES.CCODE;
+
+
+-- 7) Get the details of course that has highest course fee.
+	  SELECT *
+	  FROM COURSES
+   	  ORDER BY FEE DESC
+	  LIMIT 1, 1;
+
+-- 8) Get the details of students who have made a payment in the last month but no in the current month.
+	  SELECT * FROM STUDENTS
+	  INNER JOIN PAYMENTS ON STUDENTS.ROLLNO=PAYMENTS.ROLLNO
+	  WHERE DP < '2021-02-01' AND DP>= '2021-01-01';
+
+
+
+-- MODULE 6
+
+-- 3) What is the result of x > ANY (10,20), if x is 15? ___1_____.
+
+
+-- 4) Subquery always passes the result to the main-query [T/F] __TRUE___
+
+
+-- 5) Subquery can be used in VALUES clause of INSERT command.[T/F] _TRUE___. 	
+
+
+-- 6) Display details of courses taken by students who joined in the month of june, 2001.
+	  SELECT * FROM COURSES
+	  WHERE CCODE = ANY(SELECT CCODE FROM BATCHES 
+	  WHERE BCODE=(SELECT BCODE FROM STUDENTS
+	  WHERE DATE_FORMAT('2001-06-01','%m %Y')=DATE_FORMAT(DJ,'%m %Y') ));
+
+
+-- 7) Delete the details of students who haven’t paid anything so far
+	  DELETE FROM STUDENTS
+	  WHERE ROLLNO <> ALL(SELECT ROLLNO FROM PAYMENTS);
+
+
+-- 8) Display the details of course for which there are more than 3 batches.
+	  SELECT * FROM COURSES
+	  WHERE CCODE=(SELECT CCODE FROM BATCHES
+	  GROUP BY CCODE 
+	  HAVING COUNT(BCODE)>3);
+
+
+-- 9) Display the details of course that has highest number of batches.
+	  SELECT * FROM COURSES
+	  WHERE CCODE=(SELECT CCODE FROM (SELECT CCODE,MAX(BCODE)
+	  FROM (SELECT CCODE,COUNT(BCODE) BCODE FROM BATCHES GROUP BY CCODE) A) B);
+
+	  SELECT CCODE 
+	  FROM (SELECT CCODE,MAX(BCODE) 
+	  FROM (SELECT CCODE,COUNT(BCODE) BCODE 
+	  FROM BATCHES GROUP BY CCODE) A) B;
+
+
+-- 10.	Change the ENDDATE of batch B8 to the ENDDATE of most recent batch.
+	  UPDATE BATCHES
+	  SET ENDDATE='2021-01-01'
+	  WHERE BCODE=6;
+
+	  UPDATE BATCHES
+	  SET ENDDATE=(SELECT max(ENDDATE) ENDDATE 
+	  FROM (SELECT BCODE, MIN(ENDDATE) ENDDATE FROM BATCHES
+	  GROUP BY BCODE) A)
+	  WHERE BCODE=7;
+
+ 	  SELECT *FROM BATCHES;
+
+-- 11) Display the details of students who haven’t paid total amount so far.
+	  SELECT * FROM STUDENTS 
+  	  WHERE ROLLNO=ANY(SELECT STUDENTS.ROLLNO 
+  	  FROM (SELECT ROLLNO , SUM(AMOUNT) AMOUNT FROM PAYMENTS GROUP BY ROLLNO)
+	  INNER JOIN STUDENTS ON PAYMENTS.ROLLNO = STUDENTS.ROLLNO
+	  INNER JOIN BATCHES ON BATCHES.BCODE=STUDENTS.BCODE
+	  INNER JOIN COURSES ON COURSES.CCODE=BATCHES.CCODE
+	  WHERE (COURSES.FEE - PAYMENTS.AMOUNT) > 0 );
+
+
+
+-- 12) Display the details of payment made by students of Oracle batch started on 5-dec-2000.
+	  SELECT * FROM PAYMENTS
+  	  WHERE ROLLNO =ANY(SELECT STUDENTS.ROLLNO FROM PAYMENTS
+	  INNER JOIN STUDENTS ON PAYMENTS.ROLLNO = STUDENTS.ROLLNO
+	  INNER JOIN BATCHES ON BATCHES.BCODE=STUDENTS.BCODE
+	  INNER JOIN COURSES ON COURSES.CCODE=BATCHES.CCODE
+	  WHERE COURSES.CCODE=1 AND BATCHES.STDATE='2001-01-12');
+
+
