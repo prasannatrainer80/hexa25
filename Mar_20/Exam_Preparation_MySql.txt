@@ -1,0 +1,105 @@
+1) What is the definition for 1 NF
+
+Atomic Values
+
+2) What is the Definition for 2 NF
+
+Functional Dependency
+
+3) What is Definition for 3NF
+
+Transitive Dependency
+
+4) Which clause allows you to eliminate duplicate entries at time of display
+
+DISTINCT
+
+5) Which join allows you to generate cartician product of 2 given tables 
+
+Cross Join
+
+6) What is the output for below query 
+
+select empno,name,sal from emp having sal > 3000;
+
+7) Can we join a table with itlsef 
+
+8) Write a command to display all records whose name ends with 's'
+
+select * from table_name here name like '%s';
+
+9) What is the output for the below command 
+
+select empno,name,job,sal from emp order by job, sal;
+
+First it sorts by job wise, duplicate entries of job are sorted by sal
+
+10) What is the difference between delete and truncate command 
+
+By using Delete we may rollback operations, but in truncate we cannot do 
+
+11) Which command used to change the table values 
+
+1) ALTER 2) Update 3) Modify 4) Delete 
+
+12) Give command to add field to Emp table (gender varchar(30)) 
+
+alter table Emp add gender varchar(30) 
+
+13) Give the command to add primary key to Emp table 
+
+Alter table Emp add priary key(empno)
+
+Alter table Emp add constraint pk_emp_empno primary key(empno)
+
+14) Emp(Empno+,Name,sal) LeaveDetails(LeaveId+,EmpNo-,LeaveStartDate,LeaveEndDate,
+lop)
+
+Apply inner join on above tables 
+
+15) Identify alter command sytax to add foreign key on Empno Field on LeaveDetails table
+parent table is Emp 
+
+alter table LeaveDetails add constraint fk_leaveDetails_empno
+Foreign key(empno) REFERENCES Emp(empno)
+
+16) Write a Query to display 4th max salary (used correlated subquery) 
+
+select sal from emp e1 where 4-1=(select count(distinct sal) from emp e2 where e2.sal>e1.sal);
+
+17) What is Subquery 
+It is not possible to get records by using single select statements, then we need the help of subquerys. The result of inner query will be send as input to the outer query
+
+18) What is the difference between ALL operator and ANY operator 
+
+All operator acts as AND operator, ANY operator acts as OR operator. 
+
+19) Display Dept, total employees working in each dept 
+
+
+select job,count(*) from Emp group by job;
+
+20) Above query find out which dept is having more than one employ those records to be printed. 
+
+
+select job,count(*) from Emp group by job
+having count(*) > 1
+
+21) select Empno,name,job from emp order by job
+where sal > 3000;
+
+Query is wrong as order clause will comes lost
+
+22) Priority 
+
+WHERE
+GROUP BY
+Having
+Order By
+
+23) What is the diff between count(*) vs count(fieldname) 
+
+count(*) returns total no.of records of table
+
+count(fieldname) returns count for which fieldname contains not null values
+

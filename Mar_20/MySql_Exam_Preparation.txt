@@ -1,0 +1,300 @@
+
+Employ(ECode,Ename,Job,Sal,SalDate,Gender,AadharNo,City,State) 
+
+Candidate Key : Any key that which uniquely identifies rows of a table known as candidate key. (Empno,AadharNo) 
+
+Primary Key : One of the Candidate key needs to be chosen as primary key based on priority. 
+
+Alternate Key : Any key that which is candidate key, but not primary key known as alternate key. 
+
+Composite Key : Any key that which uniquely identifies rows of a table made up of more than one attribute, known as composite key. 
+
+Foreign Key : Primary key in the parent table will be the foreign key in the child table. 
+
+First Normal Form : 
+
+   A table said to be in 1NF, each cell precisely contains one value (Atomic Values) 
+
+Second Normal Form : 
+
+	Every attribute, functionally depend on whole key but not as part of the key. 
+
+Third Normal Form : 
+
+	Transitive Dependency 
+
+
+select Empno,Ename from Emp 
+Having Sal > 3000;
+
+
+select count(comm) from Emp 
+
+Above command returns ???
+
+Returns rows in which for employee comm is not null. 
+
+select empno,ename,sal from emp
+order by ename
+where sal > 2000;
+
+command is wrong, as order by comes always last. 
+
+first -- where clause
+then group by 
+then having 
+last order by 
+
+
+working command w.r.t. priority : 
+
+select job, sum(sal), count(*) from Emp 
+where job in('CLERK','MANAGER','PRESIDENT')
+group by job
+having sum(sal) > 2000 
+order by job;
+
+Which join generates cartician product of table rows 
+
+cross join
+
+ACID Properties 
+
+Atomicity : This state ensures that either all the data modifications are perfomed or none of them are performed. 
+
+Consistency : This is a state in which all data is in a consistency state after a transaction is completed successfully.
+
+Isolation : This states that any data modification made by concurrent transactions must be isolated from the modifications made by other concurrent transactions.  There is no scope for the transaction to seee an intermediate state. 
+
+Durability : This states that any change in data by a completed transaction remains permanent in the system. Therefore, any change in data due to a completed transaction persists even in the event of system failure. 
+
+
+Write a query which displays all records whose name starts with J and 5th char is S
+
+select * from Emp where ename like 'J___S';
+
+
+Which clause used to eliminate duplicatates at time of display 
+
+DISTINCT 
+
+SELECT DISTINCT JOB FROM Emp;
+
+Write a query to retrieve all records whose comm is not null 
+
+select * from Emp where comm is not null;
+
+
+select * from Emp 
+order by job,ename
+
+What the above command will returns 
+
+What is the purpose of group by 
+
+select job,sum(sal) from Emp
+where job in('PRESIDENT','CLERK','MANAGER')
+group by job 
+order by job;
+
+What is the difference between WHERE and HAVING clause 
+
+WHERE Clause used to check conditions on table fields, where 
+
+HAVING clause used to check conditions on aggregate fields. 
+
+select c.ccode,f.FacCode,c.Name, F.Name,Fee ,Qual from Courses c
+INNER join COURSE_FACULTY cf on c.CCODE = cf.CCODE INNER JOIN Faculty f on cf.FACCODE = f.FACCODE ;
+
+Is any table can be joined with itself ???
+
+SELF JOIN 
+
+If table A contains n records, table B contains m records then which generates cartician product of two tables. 
+
+
+CROSS JOIN 
+
+Subquery : 
+
+Sometimes its not possible to retrieve data from tables using single SQL statement, so to overcome this we need the help of subquery. 
+A subquery is a query, that which is having another query inside, 
+the query which is inside known as inner query, 
+the query which is outside known as outer query,
+
+everytime, the result of the inner query will be send as input to the outer query. 
+
+There are 2 types of subqueries as 
+
+1) Single Row : If a subquery returns only one row, then its known as Single Row Subquery.
+
+2) Multiple Row : If a subquery returns more than one record, then we call it as multi-row subquery.
+
+1) Display Idle agents (Which is there in agent table, but not there in AgentPolicy Table) 
+
+2) Display Idle policies (Which is there in Policy Table, but not there in AgentPolicy Table)
+
+3) Display all agent records who did business (Which exists in both Agent and AgentPolicy tables)
+
+4) Display list of policies for which agents did business (Which exists in both Policy and AgentPolicy Tables) 
+
+
+If subquery returns more than one row, you can handle them by using either 
+
+ALL or ANY Operator. 
+
+Ex : Empno<> ALL(10,20,30) means 
+
+     Empno <> 30 AND Empno <> 20 AND EMPNO <> 30 
+
+     EMPNO <> ANY(10,20,30) means 
+
+	Empno <> 10 OR Empno <> 20 OR Empno <> 30 
+
+select * from Agent
+where agentiD <> ALL(select AgentID from AgentPolicy);
+
+select * from Policy 
+where PolicyID <> ALL (select PolicyID from AgentPolicy);
+
+select * from Agent 
+where AgentID = ANY(select AgentID From AgentPolicy);
+
+select * from Policy 
+Where PolicyID = ANY(Select PolicyID from AgentPolicy);
+
+What is the Purpose of ALTER Command 
+
+Used to modify the table definition 
+add/modify/remove columns/constraints to/from table. 
+
+Alter table Table_name add field datatype {used to add new field}
+
+Alter table Emp add gender varchar(10); 
+
+Alter table Table_name modify field new_value {used to modify the field} 
+
+Alter table Emp modify gender varchar(6);
+
+Alter table Table_name drop column column_name {Used to drop a field from table} 
+
+alter table Emp drop column gender; 
+
+
+What is the Difference between Alter and Update Commands 
+
+Alter used to update the table_structure,
+Update used to update the record values. 
+
+ALTER is DDL command
+UPDATE is DML command 
+
+DDL commands (CREATE, ALTER, DROP, TRUNCATE) 
+
+DML Commands (INSERT, UPDATE, DELETE)
+
+GRANT and REVOKE comes under DCL 
+
+SELECT is DQL 
+
+What is the difference between DROP and TRUNCATE 
+
+TRUNCATE Deletes only table records but table structures remains there.
+
+DROP deletes table records and Table as well. 
+
+What is the difference between DELETE and TRUNCATE 
+
+If you delete any record by using DELETE command, you can rollback record if you want
+But, by using Truncate you cannot rollback the data. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
