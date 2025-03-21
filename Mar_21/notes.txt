@@ -79,6 +79,15 @@ while(condition) {
 ...
 }
 
+for loop : This loop executes all the statement(s) repeatedly until the condition remains true, if the condition remains false, then it comes out of the loop. 
+
+for(initialization;condition;increment/decrement) {
+...
+...
+}
+
+
+
 
 
 
