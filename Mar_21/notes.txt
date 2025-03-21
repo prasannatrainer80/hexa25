@@ -1,0 +1,88 @@
+Increment and decrement operators : 
+____________________________________
+
+++, --
+
+int x=3;
+x++
+
+++x 
+
+What is pre-increment (vs) post-increment
+
+In Post-increment, at first it assigns old value and then it increments, 
+
+In Pre-Increment at first it increments and assigns the updated value. 
+
+Post-Increment updated value comes in picture in next operator or next statement. 
+
+int x=3;
+int y = x++ + ++x;
+
+x=3
+A   3 + 5
+M   4   5
+
+You can create an object to the class, as
+
+class_name obj = new class_name();
+
+Control Structures : 
+______________________
+
+	Used to define the flow of the program. 
+
+There are 2 types of control structures known as
+
+(i) Branching : 
+
+	if...else : Executes the statement(s) based on the condition.
+
+		if(condition) {
+		    statement(s);
+		} else {
+		   statement(s);
+		}
+
+	switch...case : Used to define the menu-driven programs. 
+
+	switch(expression) {
+		case expression1 : 
+			statement(s);
+			break;	
+		case expression2 : 
+			statement(s);
+			break;
+		case expression3 : 
+			statement(s);
+			break;
+		default : 
+			statement(s);
+			break;
+	}
+
+(ii) Looping 
+
+while loop : This loop executes all the statement(s) repeatedly until the condition remains true, if the condition remains false, then it comes out of the loop. 
+
+For every loop, basically there are 3 phases known as 
+
+	(i) Initialization	-> Performed at the beginning of the loop
+
+	(ii) Condition 		-> Performed at the conditional part of the loop
+
+	(iii) Increment/Decrement -> Performed before closing the loop
+
+while(condition) {
+...
+...
+...
+}
+
+
+
+
+
+
+
+
