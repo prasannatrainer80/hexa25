@@ -148,6 +148,15 @@ nextInt() -> Read One Integer
 nextDouble() -> Read double value
 nextLine() -> Reads one line of text.
 
+Team 1 : Ecommerce
+
+Team 2 : Crime Management
+
+Team 3 : Career Hub
+
+Team 4 : Pet Pals
+
+Team 5 : Car Rentals
 
 
 
