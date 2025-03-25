@@ -1,0 +1,162 @@
+Object Oriented Programming : 
+
+It is an approach, that provides a way of modularizing programming, that which can be used to create small partition memory area for both data and objects, which are to be used as templates for creating copies of such modules on demand. 
+
+Object : An object is a real world entity, that which possess 3 characterstics known as 
+
+	(i) State
+
+	(ii) Behaviour
+
+	(iii) Identity 
+
+OOPS features : 
+________________
+
+(i) Encapsulation : Wrapping up of data and functions into a single unit known as encapsulation.
+
+(ii) Abstraction : Hiding the irrelevant details of an object, that do not contribute to its essential characterstics known as abstraction. 
+
+*** Encapsulation focuses on showing the relevant details, where abstraction focuses on hiding the irrelevant details ***
+
+(iii) Inheritance : Deriving a new entity from already existing entity known as inheritance, through inheritance we can reduce the size of the program.
+
+(iv) Polymorphism : The ability to take more than one form known as polymorphism. 
+
+class : A class is a template or blueprint, that which contains combination of data members 
+and member functions.  Members of the class can be accessible by using instance of the class.
+
+class class_name
+{
+    data members;
+    member functions;
+}
+
+Why Java : 
+__________
+
+1) Platform Independence : Write Once and run anywhere. 
+
+2) Console, Windows, Web, Service Oriented 
+
+3) Packages : Contains group of related classes and interfaces that which belongs to one common group, if you want to overcome the naming conflicts between classes, then we need the help of pacakges. 
+
+Java Features : 
+________________
+
+	(i) Simple : Java uses simple C/C++ syntaxes, as a programmer no need to take care
+		of internal details like memory management etc...as how much memory
+		allocated to run the program, the same amount of memory will be 
+		reallocated automatically. 
+
+	(ii) Object Oriented : Java supports all object-oriented programming features.
+
+	(iii) Compiled and Interpreted : Java programs are compiled first, during compilation java code will be converted into bytecode, then .class file will be created. In interpretation it reads the bytecode line by line and executes. 
+
+ 	(iv) Portable : Ability to run the program without changing the source code, java programs are programs, that can run on any env. without changing the source code. 
+
+	 (v) Securable : In java we can implement various levels of security as 
+
+		(i) Compiler level security : Whether the program authorized to compile or 				w.r.t. which version we need to compile. 
+
+		(ii) Bytecode verifier : How the way the code gets interpreted. 
+
+		(iii) Class Loader Security : Ensures whether your class will be authorized to load in the given env. or not. 
+
+	 (vi) Distributed : By using java we can make all distribute and robust applications. 
+
+
+ Java Architecture : 
+_______________________
+
+
+	(i) Java Program : Java code, that which stored with extension .java
+
+	(ii) Java Class : Java code after compilation its converted into bytecode then 
+			.class file will be created. 
+
+	(iii) JVM (Java Virtual Machine) 
+
+		It contains various components as 
+
+			(a) Class Loader : Used to load all classes which are required to run the program. 
+
+		There are 2 types of class loaders known as
+
+				(i) Primordial Class loader : Used to load all system classes which are required to run the program. 
+
+				(ii) Class Loader Objects : Used to load all user-defined classes.
+
+			(b) JIT Compiler (Just-In Time) : Converts bytecode into CPU specific format. 
+		
+			(c) Execution Manager : Contains QUEUE of programs which are ready to run, where we can execute the program. Before execution it needs to undergone the security authentication.
+
+	(iv) Java API : It provides runtime env. that which allows you to run the java program
+
+	It contains various things as 
+
+		(i) JDK
+
+		(ii) JRE
+
+Access Modifiers : 
+___________________
+
+	(i) private : Allows you to access members within the current class. Outside the class 			you cannot access them.
+
+	(ii) public : Allows you to access members in entire application.
+
+	(iii) protected : Allows you to access members within current/derived class. 
+
+	(iv) friendly : By default java possess friendly access modifier, allows you to access 			members within all classes of current package.
+
+You can define method main() as 
+
+public static void main(String[] args) {
+...
+...
+...
+}
+
+System.out.println() : Used to display any value or message. 
+
+	System      ->       class
+	 out        ->       Console
+	println()   -> 	     method
+
+System.out.println("Welcome to Java Programming...");
+
+there are 2 types of data types as 
+
+1) value types
+
+	int, float, double, char, boolean
+
+2) reference types
+
+	Object, String 
+
+*** Value types will be stored in stack memory, reference types will be stored in 
+Heap Memory ***
+
+Scanner class : this class allows you to accept input from the keyboard. 
+
+Scanner sc = new Scanner(System.in);
+
+next() -> Read one word
+nextInt() -> Read One Integer
+nextDouble() -> Read double value
+nextLine() -> Reads one line of text.
+
+Team 1 : Ecommerce
+
+Team 2 : Crime Management
+
+Team 3 : Career Hub
+
+Team 4 : Pet Pals
+
+Team 5 : Car Rentals
+
+
+
