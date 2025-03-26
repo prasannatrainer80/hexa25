@@ -1,0 +1,98 @@
+The default package in java is java.lang 
+
+Object is the top level class in java, from which all classes are derived. 
+
+Boxing and Unboxing : 
+______________________
+
+The concept of converting value types to reference types known as boxing, and reference types to value types known as unboxing. 
+
+Object is the type, that which can be used for boxing and unboxing. 
+
+int x;
+
+x="Hello";
+x=12;
+x=12.5;
+
+Object x;
+
+x="Hello";
+x=12;
+x=12.5;
+
+
+Assume, the data is in Object format, we cannot perform any operations, for that we need to unbox it first. 
+
+Above code, if the string to be unboxed, then 
+
+String s1 = (String)x;
+If integer to be unboxed, then 
+
+int x1 = (Integer)x;
+
+if double value to be unboxed, then 
+
+double d1 = (Double)x;
+
+if Employ class object to be unboxed, then 
+
+Employ e1 = (Employ)x;
+
+Object is the top level class in java, it has various methods as
+
+1) hashCode() : Display's the memory location address number. 
+
+2) getClass() : Used to display the data type available in object.
+
+3) toString() : Contains string representation, this method will be called automatically once you print the object. If you want to print the member variables of the class, then we need the help of toString().
+
+4) equals()
+
+Method Overloading : The concept of using the same method name w.r.t. different data types or different parameters known as method overloading. Here, the method name must be same, but no.of parameters or type of parameters we are using here are different. 
+
+class Test {
+    int a, b;
+    a=5;
+    b=7;
+}
+
+Constructor : A constructor is a special member, which used to initialize the member variables of the class, it is special because it has the same name as that of class name. 
+
+Rules : 
+________
+
+	-> It will not contains any return type
+
+	-> It will not return any value
+
+	-> It will be invoked automatically once the instance of the class created
+
+	-> A constructor can be overloaded. 
+
+Types of Constructors : 
+_________________________
+
+There are 2 types of constructors known as 
+
+1) static constructors : These are called class constructors, which are used to initialize the static variables of the class, these constructors are invoked automatically before control reaches the entry point. 
+
+2) instance constructors : These are the constructors that which are invoked automatically once the instance of the class created.  These constructors can be overloaded. 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
