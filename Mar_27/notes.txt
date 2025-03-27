@@ -1,0 +1,111 @@
+super keyword : If you want to pass values from derived class to base class, then we need the help of super keyword. It has 2 forms as 
+
+	(i) super as a keyword
+
+	(ii) super as a constructor
+
+_____________________________________________________________________________________
+
+class Quiz1 {
+   public static void main(String[] args) {
+	int x;
+	System.out.println(x);
+  }
+}
+
+It throws compile time error as use of unassigned value. 
+
+class Quiz2 {
+    public static void main(String[] args) {
+	System.out.println("5" + 3+8); // 538
+	System.out.println("5" + (3+8)); // 511
+	System.out.println("5 + 3"+8); // 5+38
+   }
+}
+
+class Quiz3 {
+    public static void main(String[] args) {
+	String str="sam";
+        int a=10, b= 20, c=30;
+	System.out.println(a+b+c+str);
+	System.out.println(str+a+b+c);
+	System.out.println(a+b+str+c);
+    }
+}
+
+class Quiz4 {
+	public static void main(String[] args) {
+	    int i = 10;
+	    int j = i++;
+	    System.out.println(i + " " +j);
+	}
+}
+
+class Quiz5 {
+	static boolean climate;
+	public static void main(String[] args) {
+		System.out.println(climate);
+	}
+}
+
+class Quiz6 {
+	public static void main(String[] args) {
+	   int i=8;
+	   while(i < 9) {
+	      System.out.println("Hi");
+	      i--;
+	   }
+}
+
+class Quiz7 {
+	public static void main(String[] args) {
+	  boolean flag = (4 > 3) && (5 < 4);
+	  System.out.println(flag);
+	}
+}
+
+class Quiz8 {
+	public static void main(String[] args) {
+	  boolean flag = (4 > 3) || (5 < 4);
+	  System.out.println(flag);
+	}
+}
+
+final keyword : If you define any variable as final, we cannot modify the value. 
+
+final classes cannot be inherited
+
+final methods cannot be overridden 
+
+enum : If you want to make any group of constants then we need the help of Enum. 
+
+In Java, is-a relation also known as inheritance, signifies that a subclass is specialized vesion of its superclass. We can inherit properties and behaviours by using extends keyword.
+
+Advantages : 
+_____________
+
+	-> Code Reusability : Subclasses inherit properties and behaviours from their super class
+
+	-> Hierarchy : Establishes the clear hierarchy between classes, making it easier to understand and maintain the code
+
+	-> Polymorphism : Enables polymorphism, where objects of different classes can be treated as objects of a common superclass. 
+
+Properties : Provides an opportunity to protect a field in a class. If you want to control the internal behavior of specific entity, then we need the help of properties. 
+
+There are various types of properties as
+
+1) Read Only
+
+2) Write Only
+
+3) Read-Write Properties 
+
+
+
+
+
+	
+
+
+	
+

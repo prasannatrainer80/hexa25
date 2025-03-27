@@ -79,6 +79,39 @@ There are 2 types of constructors known as
 
 2) instance constructors : These are the constructors that which are invoked automatically once the instance of the class created.  These constructors can be overloaded. 
 
+static variables : These are the variables that which retains values irrespective
+of type of object. 
+
+The concept of deriving a new class from already existing class known as inheritance,
+the class which derived known as derived class, the class from which its derived known as based class. Through inheritance we can reduce the size of the program. 
+
+class First {
+...
+...
+...
+}
+
+class Second extends First {
+...
+...
+...
+}
+
+Once you create an object to Second class, then you can access all public/protected
+and friendly members of base class. 
+
+Abstract Class : A class that which can be created, but not implemented and 
+instantiated known as abstract class. Abstract class contains abstract and 
+non-abstract methods, abstract methods needs to be overrided mandatorily by the 
+derived class. 
+
+abstract class class_name
+{
+    abstract method1();
+    abstract method2();
+}
+
+
 
 
 
