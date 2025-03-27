@@ -100,6 +100,69 @@ There are various types of properties as
 
 3) Read-Write Properties 
 
+Interface : Java does not support the concept of multiple inheritance, to achieve this
+we need the help of interfaces. 
+
+An interface contains method declaration, and the implementation can be done in the 
+corresponding class, you can add more than one interface to the particular class. 
+
+Difference between interface and abstract class 
+________________________________________________
+
+-> An abstract class contains abstract and non-abstract methods, where interface
+contains only abstract methods.
+
+-> Interface methods are public and abstract by default. 
+
+-> Multiple inheritance can be achieved by using interfaces
+
+-> An interface can be called from anywhere to anywhere. 
+
+interface interface_name
+{
+    method1();
+    method2();
+}
+
+An interface can be added to the class, by using implements keyword. 
+
+_____________________________________________________________________________________
+
+
+1) Write a program to read a sentence using scanner and display all alternate words in reverse order 
+
+Example : 
+
+welcome to java programming thank you
+
+welcome ot java gnimmargorp thank uoy
+
+2) Write a program to read a string and search for a word in the string and count how many times the word existing
+
+3) Write a program to find length of string without using string functions
+
+4) Implement the below string functions of your own
+
+length(),
+toUpperCase(),
+toLowerCase(),
+chatAt()
+indexOf()
+
+5) Write a java program to remove all the spaces from the given string
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
