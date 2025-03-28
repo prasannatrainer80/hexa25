@@ -31,3 +31,25 @@ Exception in thread "main" java.lang.ClassCastException: class com.java.cols.Emp
 	at java.base/java.util.TreeSet.add(TreeSet.java:259)
 	at DemoProject/com.java.cols.SortEmploy.main(SortEmploy.java:10)
 
+
+Generics : Generics allows you to define and pass data types at runtime. 
+
+If you want to make any method as write once and apply for all types, then we need the help of generics. 
+
+Generics can be represented by using <T> annotation. 
+
+Means in place of <T>, we can pass any data type(value type/reference type/custom type). 
+
+Advantages : 
+_____________
+
+	(i) Write Once and apply for all types
+
+	(ii) Provides security to the data 
+
+	(iii) No Typecasting required
+
+	(iv) Reduces the size of the program. 
+
+
+
