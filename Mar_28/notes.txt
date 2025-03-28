@@ -1,0 +1,33 @@
+Collections : 
+______________
+
+Arrays are static data structures, means once they are assigned we cannot alter the size. If you want to store elements irrespective of size, then we need the help of collections. 
+
+Collections can grow to any size unlike arrays. 
+
+Collections will store data w.r.t. Object format. 
+
+collections are from util package. 
+
+In Collections, we have 3 main interfaces known as 
+
+1) List : Allows you to store list of values.  ArrayList, LinkeList are falling under List interface. 
+
+2) Set : Used to remove the duplicate entries at the time of display. In Set we have 2 major classes as 
+
+	(a) HashSet 
+
+	(b) LinkedHashSet 
+
+The difference between HashSet and LinkedHashset are HashSet used to eliminate duplicates and display's records w.r.t. Hashing algorithm, where LinkedHashSet used to display data by eliminating duplicates in Insertion Order. 
+
+3) SortedSet : Used to display records w.r.t. Sorting Order. TreeSet is falling under sortedset interface. 
+
+Exception in thread "main" java.lang.ClassCastException: class com.java.cols.Employ cannot be cast to class java.lang.Comparable (com.java.cols.Employ is in module DemoProject of loader 'app'; java.lang.Comparable is in module java.base of loader 'bootstrap')
+	at java.base/java.util.TreeMap.compare(TreeMap.java:1606)
+	at java.base/java.util.TreeMap.addEntryToEmptyMap(TreeMap.java:811)
+	at java.base/java.util.TreeMap.put(TreeMap.java:820)
+	at java.base/java.util.TreeMap.put(TreeMap.java:569)
+	at java.base/java.util.TreeSet.add(TreeSet.java:259)
+	at DemoProject/com.java.cols.SortEmploy.main(SortEmploy.java:10)
+
