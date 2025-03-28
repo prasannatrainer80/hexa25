@@ -1,0 +1,17 @@
+1) What is OOPs
+2) OOPS features
+3) What is class
+4) JVM 
+5) Java Architecture
+6) Stack and Heap
+7) Arrays in depth
+8) Object class methods (hashCode(), equals(), toString(), getClass())
+9) Method Overloading
+10) Constructors
+11) static variables in depth
+12) Inheritance
+13) super keyword
+14) Polymorphism
+15) Abstract class
+16) Interface
+
