@@ -1,0 +1,116 @@
+Date class allows you to perform date oriented operations. 
+
+Date class is from util package. 
+
+SimpleDateFormat : Used to format the date object to the format specified. 
+
+SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+format() : used to convert Date to String. 
+
+Exception Handling : It is a mechanism of handling the runtime errors during the execution of the program. 
+
+There are 2 types of errors known as 
+
+	(i) Compile Time
+
+	(ii) Runtime 
+
+Compile Time errors JVM takes care of it. Runtime errors occurs, during runtime if we pass invalid values, the type of errors we are getting known as runtime errors. 
+
+By using Exception Handling, we can overcome the runtime errors. 
+
+To handle exceptions, we have 3 blocks known as 
+
+(i) try block : This block contains statements in which there is possibility of getting runtime errors, the statement(s) which are placed in this block are treated as heavy weighted statement(s) as JVM allocates excess memory to them. 
+
+(ii) catch block : Once exception raised in try block, then the control will be forwarded to catch block, this block contains alternate statement(s) for exceptions raised in try block, one try block can contains multiple catch blocks. 
+
+(iii) finally block : This block contains statement(s) that needs to be executed mandatorily irrespective of try and catch blocks, this block is not mandatory, but all the statements which are placed in this block are executed as mandatory statements. 
+
+Exception is the top most class, from which all kinds of exceptions are derived. 
+
+try {
+...
+...
+...
+} catch (Exception e) {
+...
+...
+...
+} finally {
+...
+...
+...
+}
+
+There are 2 types of exceptions known as 
+
+(i) Checked Exceptions : These are the exceptions, that which occurs at compile time, during compilation JVM feels some erroneous code is there and stops the execution at compile time, can be handled at method level by using throws keyword. 
+
+(ii) Unchecked Exceptions : These are the exceptions, that which occurs at runtime can be handled by using try...catch blocks.
+
+System Exceptions are inadequate to handle in all situations, to overcome this we need the help of custom exceptions. Any class, that which derived from Exception can be treated as custom exception. 
+
+class class_name extends Exception {
+	class_name(String error) {
+	   super(error);
+	}
+}
+
+Application Architectures : 
+___________________________
+
+There are 3 types of application architectures known as
+
+1) Single Tier
+
+2) Two-Tier
+
+3) Three-Tier
+
+Each application architecture contains 3 layers known as 
+
+(i) User Services
+
+(ii) Business Services 
+
+(iii) Data Services 
+
+In Single Tier architecture, one single executable file handles all these operations. 
+
+So, Single Tier architecture applications are called monolythic applications. 
+
+Implement CRUD operations in the below class. 
+
+Employ
+______
+empno(int)
+name
+gender(ENUM)
+dept
+desig
+basic 
+
+1) Add Employ
+2) Show Employ
+3) Search Employ
+4) Update Employ
+5) Delete Employ
+
+Validations :
+______________
+
+Name contains min 5 chars
+Dept contains min 3 chars
+basic must be between 10000 and 80000 
+
+Data Layer to be called in Business Layer, Business Layer can be called in main. 
+
+Create one user-defined Exception class as EmployException 
+
+
+
+
+
+
