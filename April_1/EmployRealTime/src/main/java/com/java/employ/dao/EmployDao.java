@@ -7,4 +7,5 @@ import com.java.employ.model.Employ;
 
 public interface EmployDao {
 	List<Employ> showEmployDao() throws ClassNotFoundException, SQLException;
+	Employ searchEmployDao(int empno) throws ClassNotFoundException, SQLException;
 }

@@ -37,4 +37,24 @@ public class EmployDaoImpl implements EmployDao {
 		return employList;
 	}
 
+	@Override
+	public Employ searchEmployDao(int empno) throws ClassNotFoundException, SQLException {
+		connection = ConnectionHelper.getConnection();
+		String cmd = "select * from Employ where empno = ?";
+		pst = connection.prepareStatement(cmd);
+		pst.setInt(1, empno);
+		ResultSet rs = pst.executeQuery();
+		Employ employFound = null;
+		if (rs.next()) {
+			employFound = new Employ();
+			employFound.setEmpno(rs.getInt("empno"));
+			employFound.setName(rs.getString("name"));
+			employFound.setGender(Gender.valueOf(rs.getString("gender")));
+			employFound.setDept(rs.getString("dept"));
+			employFound.setDesig(rs.getString("desig"));
+			employFound.setBasic(rs.getDouble("basic"));
+		}
+		return employFound;
+	}
+
 }
