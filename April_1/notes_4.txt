@@ -1,0 +1,288 @@
+The PreparedStatement interface derived from the Statement interface and is available in the java.sql package. The PreaparedStatement object allows you to apass runtime parameters to the SQL statements to query and modify the data in table. 
+
+Methods of PreparedStatement Interface 
+______________________________________
+
+ResultSet executeQuery() : Executes the Select statement and returns the result in the ResultSet object. 
+
+int executeUpdate() : Executes an SQL statement, INSERT, UPDATE andf DELETE and returns the count of rows affected. 
+
+boolean execute() : Executes the SQL statements and returns the boolean value. 
+
+For suppose if you want to pass the values to the select query during the execution of the program, then 
+
+Select * from emp where empno = ?
+
+PreparedStatement pst;
+
+pst=con.prepareStatement("select * from emp where empno = ?");
+
+The value for the SQL statement can be send by using 
+
+setXYZ() method. 
+
+
+pst.setInt(1,4);
+
+Means in the First ? position apply the value 4. 
+
+If it is string type value, then you need to give
+
+pst=con.prepareStatement("select * from emp where nam = ?");
+
+pst.setString(1,'sowjanya')
+
+ResultSet rs=pst.executeQuery();
+
+
+
+emp(empno,nam,dept,desig,basic) 
+
+String str="insert into emp values(?, ?, ?, ?, ?)";
+
+PreparedStatement pst=con.prepareStatement(str);
+
+pst.setInt(1,76);
+pst.setString(2,"Prasanna");
+pst.setString(3,"Java");
+pst.setString(4,"Trainner");
+pst.setInt(5,15333);
+
+int p=pst.executeUpdate();
+
+
+Managing Database transactions : 
+
+Transaction : A transaction is a set of one or more SQL statements that are executed as a single unit. A transaction is complete only when all the SQL statements in the transaction execute successfully. If any one of the SQL sttements in the transaction fails, the entire transaction is rolled back thereby maintaining consistency of the data in the database. 
+
+The database transactions can be commited in two ways : 
+
+1. Implicit : The Connection object uses the auto-commit mode to execute the SQL statements implicityly. The auto-commit mode specifies that each SQL statement in the transaction is committed automatically. 
+
+2. Explicit : You have to use the setAutoCommit() method. This method accepts eiother of the two values, known as true or false. 
+
+  con.setAutoCommit(false);
+
+If you want to commit the transaction, the you need to give commit() method. 
+
+If you want to cancel the transaction, then rollback() method you need to use. 
+
+
+Performing Batch Updates : 
+
+A batch is group of update statements that are sent to the database to be executed as a single unit. You send the batch to the database in a single request using the same Connection object. This reduces the network calls between the applicatin and the database. 
+
+Implementing the Batches : 
+
+void addBatch() -> Adds an SQL statement to a batch.
+
+executeBatch() -> Sends a batch of SQL statements to a database for processing and returns the total no.of the rows updated. 
+
+con.setAutoCommit(false);
+Statement st=con.createStatement();
+st.addBatch("insert into emptest values(.....)");
+st.addBatch("insert into emptest values(.....)");
+
+int[] count=stat.executeBatch();
+
+________________________________________________________________________________
+
+
+Creating Stored Procedure : 
+
+Stored Procedures can be created using the JDBC applications, you can use the execute() method to execute the Create Procedure SQL statements. 
+
+A stored Procedure can accept one or multiple parameters. A parameter of a stored procedure can take any of these forms. 
+
+IN : Refers to the arguments that you pass to a stored procedure. 
+
+OUT : Refers to the return value of a stored procedure.
+
+INOUT : Combines the functionality of the IN and OUT parameters. The INOUT parameter enables you to pass the argument to a stored procedure. 
+
+
+Calling the Stored Procedure without parameter : 
+______________________________________________
+
+The Connection interface provides the prepareCall() method that is used to create the CallableStatement Object. This object is used to call the stored procedure of the database. 
+
+The prepareCall() is an overloaded method that has the following 3 forms.
+
+1) CallableStatement prepareCall(String str) : Creates a CallableStatement object to call a stored procedure. The PrepareCall() method accepts a string as a parameter that contains an SQL statement to call a stored procedure. 
+
+2) CallableStatement prepareCall(String str,int resSetType, int resSetConcurrency) : Creates a callable statement object that returns ResultSet object that has the specified result set type and concurrency mode. 
+
+
+Calling the Stored Procedure with parameters : 
+
+The OUTPUT parameters can be registered by using the registerOut() method. 
+
+1) registerOut(int x,int y) : Accepts the position of the placeholder and a constant in the java.sql.Types class as parameters. The java.sql.Types class contains constants for various JDBC types. 
+
+CallableStatement cst;
+cst.registerOutParameter(1,java.sql.Types.STRING);
+
+_____________________________________________________________________________________
+
+Creating a Stored procedure in SQL server. 
+
+create procedure tins @eno int,@na varchar(20) output,@dpt varchar(20)
+output,@dsg varchar(20) output,@bas int output
+as
+   select @na=nam,@dpt=dept,@dsg=desig,@bas=basic from emptest
+    where empno=@eno
+
+_____________________________________________________________________________________
+
+Metadata is the information about data, such as structure and properties of table. There are 2 interfaces known as 
+
+1) DatabaseMetaData interface
+2) ResultSetMetaData interface
+
+The DatabaseMetaData interface provides the methods that enable you to determine the properties of a dtabase or RDBMS. These properties include names of database tables, database version, SQL Keywords and isolation levels of the data storedin the database. 
+
+DatabaseMetaData dm=con.getMetaData();
+
+
+The ResultSetMetaData interface contains various methods that enables you to retrieve infromation about the data in the result set, scuh as number of columns, names of columns, and data types of the columns. 
+
+Methods : 
+
+int getColumnCount() -> Returns the integer indicating the total no.of columns in a ResultSet object. 
+
+String getColumnLabel(int column_index) : Retrieves the title of the table column corresponding to the index passed as a parameter to this method. 
+
+String getColumnName() : Retrieves the name of the table column corresponding to the index passed as a parameter to this method. 
+
+
+_______________________________________________________________________________________
+
+
+Types of Applications Architectures : 
+
+Basically there are 3 types of application architectures are available to us. 
+
+1. Single-tier Architecture. 
+2. Two-Tier Architecture.
+3. Three-Tier Architecture. 
+
+Each Application Layers contains basically 3 layers 
+
+1. User Services  2. Business Services 3. Data Services. 
+
+User Services : It is a presentation layer. 
+
+Business Services : On the entered data, is there any business or logical calculation are there then this layer is responsible. 
+
+Data Services : Data Store. 
+
+In Single tier architecture only one single file is going to handle all the operations. So, single tier-architecture applications are called monolythic applications. 
+
+2. Two-Tier Architectuer : In this the 3 layers will be resided in a single system or different system and performs the operations. 
+
+1. Fat Client Architecture 
+2. Fat Server Architecture 
+
+In FAT Client Architecture the Combination of User-Services and Business Services will be resided in a single system and finalizes the application, and the Data will be send to the server directly. 
+
+In FAT Server Architecture the Combination of Business Services and Data Services will be resided in a Single App and User Services resides separately in a single App. 
+
+In Three Tier Architecture, The Three Layers will be resided separately in a single system or different systems and performs the operations. 
+
+N-tier Architecture : 
+
+
+MultiProgramming :  It is client-server programming. One program acts as a server, once that program is running then only we can run one or multiple client programs. 
+
+
+RMI is a specification that enables one java virtual machine to invoke methods in an object locatated in another JVM. The two jVMs, could be running on different comuters or running as separate processes on the same computer.
+
+RMI is implemented on the middle-tier of the three-tier architecture framework, thereby facilitating the programmers to invoke distributed components across a networked env. 
+
+Components of RMI App. 
+_____________________
+
+
+It has two components 
+
+1. RMI Server 
+2. RMI Client 
+
+The RMI Server contains the objects whose methods are to be invoked remotely.  The server creates several remote objects and makes a referece of these objects in the RMI registry. The RMi Registry is a services that runs on the RMI server. The remote objects created by the server are registered by the objects unique name in this registry. The client gets the reference of one or more remote objects from the RMI registry by looking up the object name. The client then invokes the methods on the remote object(s) to access the servics of the remote object(s). 
+
+Once the client gets the reference of the remote object, the methods in the remote object are invoked just like the methods of the local object. The difference cannot be identified in terms of whether the methods are invoked on the remote object or invoked on the local object in the client. 
+
+
+RMI Architecture : 
+
+RMI Architecture contains 3 layers. 
+
+1) Stub/Skelton layer.
+2) Remote Reference layer. 
+3) Transport Layer. 
+
+
+Stub/Skelton Layer : This layers listens to remote method calls made by a client and redirects these calls to the remote RMI services on the server. This layers consists of a stub and a skelton. 
+
+A stub is a client-side proxy representing the remote object. it is referenced by the programs as any other local object running on the client and provides method of a remote object. 
+
+The stub communicates the method invocations to the remote object through a skeleton that is implemented on the server. 
+
+The skelton is a server-side proxy that continues communication with the stub by : 
+
+1) Reading the parameters for the method call.
+2) Making a call to the remote service implementation object. 
+3) Accepting the return value.
+4) Writing the return value back to the stub.
+
+Marshelling is process in which parameters passed by teh client are converted to a format that can be transferred  across network. (Marsheeling is a process of converting data into the format of network objects). 
+
+Remote Referece Layer : This layers interprets and manages the references made by a client to a remote object on the server. This layer is present on the client as well as the server. 
+
+The RRL present in the Client is called Client side RRL.
+
+The RRL present in the Server is called Server Side RRL. 
+
+The RRL on the client side receives a request for methods from the stub that is transferred across a network. The server-side RRL unmarshsals the parameters that are sent to remote method through the skeleton. Unmarshalling is a process in which the marshalled parameters passed by the client-side RRL through the server-side RRL are converted to a format that the skeleton understands. 
+
+Transport Layer : This is alink between RRL on the Server-side and the RRL on the client-side. The transport layer is responsible for setting up new connections and managing existing connectino. Itr is also responsible for handling remote objects that are residing in transport layer address space. 
+
+1) On receiving a request from the client-side RRL, the transport layer establishes a socket connection to the server through a server-side RRL.
+2) Then, the transport layer passes the established connection to the client-side RRL and adds the remote reference to the connection in its table. 
+
+RMI Packages : 
+
+1) java.rmi package : Provides the Remote interface, a class for accessing the remote names registered on the server, and a security manager for RMI.
+2) java.rmi.registry : Provides the classes and interfaces that are used by the remote registry. 
+3) java.rmi.server : Provides the classes and interfaces used to implement remote objects, stubs and skeletons and support for RMI communication. 
+
+Methods : 
+
+Naming Class : Provides the static methods for accessing remote objects through URLs. 
+
+  rebind() -> Binds a remote object name to the specified URL and is normally used by the server object. 
+  unbind() -> Removes the binding between an object name and the URL. 
+  lookup() -> returns the remote object specified by the URL and is normally used by the client object. 
+  list() -> Returns the list of URLs thjat are currently known to the RMI registry. 
+
+java.rmi.server packages contains set of classes and interfaces. 
+
+UnicastRemoteObject : This class extends the RemoteObject class and is common class that is subclassed by specific types of remote object implementations. 
+
+RemoteCall interface : Provides methods that are used by all the stubs and skeletons of RMI. 
+
+Skeleton interface : Provides the method to access methods of the remote object and this interface is implemented by the remote skeletons. 
+
+
+
++__________________________________________________________________________
+create proc insjava(@eno int,@na nchar(15),@dpt nchar(15),  
+@dsg nchar(15),@bas int)  
+as  
+   insert into empjava values(@eno,@na,@dpt,@dsg,@bas)  
+_________________________________________________________________________________
+
+
+
+
+

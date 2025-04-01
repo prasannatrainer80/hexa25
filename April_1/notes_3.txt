@@ -1,0 +1,276 @@
+
+
+   Pooja is going to join in 5 mins. Then i will start the class. 
+
+
+Layouts in Java
+_______________
+
+layout managers are used to position the components, such as an applet, a panel or a frame in a container. These are implemented by using java.awt.LayoutManager interface. 
+
+You can specify the type of layout by using 
+
+void setLayout(laboutManager obj);
+
+The diff. types of layout managers are : 
+
+1. FlowLayout Manager
+
+2. BorderLayout Manager
+
+3. GridLayout Manager
+
+
+FlowLayout : This is the default manager for the Applet class. The components are placed in a container window in a sequence one after the other in rows. java provides the FlowLayout class to apply flow layout to the various components that you are inserting in an applet. 
+
+
+2. BorderLayout Manager : This is the default layout for the Frame class. This layout manager divides the container into north, south, east, west and centre regions. 
+
+The setLayout() method is used for applying border layout to a container. You specify the directions for the BorderLayout using the BorderLayout.NORTH, BorderLayout.SOUTH etc...
+
+3. GridLayout Manager : This is a layout that divides the container into rows and columns. The componetns are then added to the layout in cells. The intersectino of a row and ca column of the grid layout is called cell.
+  
+This class of java enables you to create a grid layout. Alll the components in the grid are of the same size. The position position of the component in a grid is determined by the order in which the components are addd to the grid. 
+
+
+The main disadvantage with applets/frames is we are not in the position to place the controls at the specific position, and they cannot perform complex opertions. To ensure that we need the help of swing components. 
+
+Swing components are providing efficient env. to java in addition to applets. Swing components are a collection of lightweight visual components that provide a replacement for a heavy weight AWT components. 
+
+you need to use javax.swing.*; package to work with the swing components. 
+
+The class hierarchy of swing components is categorized as : 
+
+1. Top-Level Swing Containers : 
+
+1. JFrame
+2. JApplet
+3. JDialog 
+
+2. Intermediate-level Swing Containers : 
+
+1. JPanel
+2. JtabbedPane
+3. JscrollPane
+4. JToolBar. 
+
+3. Atomic Components : 
+
+JTextField
+JComboBox
+JCheckBox
+JButton
+JLabel
+JTable 
+
+
+To ensure place the controls at the specific positoin w.r.t x axis and y axis the we need the help of swing components. 
+
+GridBagLayout Manager : It is the most flexible and complex layout manager provided by AWT. It organizes the components into a rectangular grid. Using this layout, you have the flexibility to place the components in any row and column in the grid.  
+
+
+The GridBagLayout clas has single constructor and does not take any arguments. THe position of each component in a layout is controlled by a GridBagLayout object and is determined by the currently set GridBagConstraints. The object is build by the constructor of the class by using the code; 
+
+GridBagConstraints gbc=new GridBagConstraints();
+
+The layout for the GridBagLayout is defined as :
+
+GridBagLayout layout=new GridBagLayout();
+
+
+Specify the constriants : 
+
+The attributes of the GridBagConstraints are : gridwidth,gridheight,anchor,fill,gridx,gridy,weightx and weighty
+
+gridx,gridy : Used to specify the number of rows and columns of the rectangular grid respectively.  
+
+the syntax for specifying is : 
+
+JTextField f1=new JTextField(12);
+
+GridBagConstraints gbc=new GridBagConstraints();
+
+GridBagLayout g1=new GridBagLayout();
+JPanel panel=(JPanel)getContentPane();
+panel.setLayout(g1);
+
+
+gbc.anchor=GridBagConstraints.NORTHEAST;
+gbc.gridx=1;
+gbc.gridy=5;
+g1.setConstraints(f1,gbc);
+panel.add(f1);
+
+
+GridBagConstraints gbc=new GridBagConstraints();
+GridBagLayout g1=new GridBagLayout();
+JPanel panel=(JPanel)getContentPane();
+panel.setLayout(g1);
+
+
+GridBagConstraints gbc=new GridBagConstraints();
+GridBagLayout g1=new GridBagLayout();
+JPanel panel=(JPanel)getContentPane();
+panel.setLayout(g1);
+
+
+gbc.anchor=GridBagConstraints.NORTHEAST;
+gbc.gridx=1;
+gbc.gridy=5;
+g1.setConstraints(f1,gbc);
+panel.add(f1);
+
+_____________________________________________________________________________
+
+JDBC (Java DataBase Connectivity)  Java applications cannot directly communicate with a database to submit data and retrieve the results of queries. You need a mechanism to translate java statements into SQL statements. The JDBC architecture provides the mechanism for this kind of transaction. 
+
+JDBC Architecture is classified into 2 types. 
+
+JDBC Application Layer : Signifies a java application that uses the JDBC API to interact with the JDBC drivers. A JDBC driver is a software that a java application uses to access a database. 
+
+JDBC Driver Layer : Acts as an interface between a java applicatinos and a database. This layer contains a driver, such as a SQL Server driver or Oracle driver, which enables you to connect to the database. A driver sends the request of a java application to the database. After processing the request, the database sends the response back to the driver. The Driver translates and sends the response to the JDBC API. 
+
+Types of JDBC Drivers : 
+
+1) JDBC-ODBC Bridge Driver {Type 1}
+
+2) Native-API Partly-Java driver {Type 2}
+
+3) JDBC-Net Pure-Java driver {Type 3}
+
+4) Native Protocol Pure-java Driver. {Type 4}
+
+1. JDBC-ODBC Bridge Driver : It is called type 1 driver, that converts the JDBC calls to Open Database Connectivity (ODBC). ODBC is an open standard API to communicate with the databases.  The JDBC-ODBC bridge driver enables a java app. to use any database that supports ODBC driver. Java application will not interact with the ODBC driver, for this purpose, we need to use JDBC-ODBC bridge driver that works as an interface between the app and the ODBC driver. 
+
+2. Native-API Partly-Java Driver : It is called type 2 driver. It uses the local native libraries provided by the database vendors to access databases. The JDBC driver maps the JDBC calls to the native method calls, which are passed to the local native Call Level Interface(CLI). To use this driver the CLI needs to be loaded on the client computer. As opposed to the JDBC-ODBC bridge driver, the Native-API partly-java driver does not have an ODBC intermediate layer. 
+
+3. JDBC-Net Pure-Java Driver : This is called Type 3 driver. You can use the JDBC-Net Pure-Java Driver over the web while connecting applets with databases. This driver consists of client and server portions. Client Portion contains the pure java functions and the server side portion contains java and native methods. The java app. sends the JDBC calls to the JDBC-Net Pure java driver client portion, which in turn, translates JDBC calls into database calls. 
+
+4. Native Protocol Pure-java driver : This is called type 4 driver, it is a java driver that interacts with the database directly using a vendor-specific network protocol, As opposed to the other JDBC drivers, you do not require to install any vendor-specific libraries to use the Type 4 driver. 
+
+
+_______________________________________________________________________________
+
+You need to load the database drivers and the JDBC API while developing a java application to retrieve or store data in a database. All JDBC classes and interfaces are available in java.sql package. The classes and interfaces performs the no.of tasks such as establish and close the connectino with a database, send a request to the database etcc..
+
+DriverManager class : Loads the Driver for a database. 
+
+
+To query a database and display the result using java application, you need to : 
+
+1) Load a Driver
+
+2) Connect to database
+
+3) Create and execute JDBC statements
+
+4) handle SQL Exceptions. 
+
+Loading Driver : 
+
+You can load the driver by using forName() method. 
+
+
+Class.forName("sun.jdbc.odbc.JdbcOdbcDriver"); // Type 1 driver
+
+Class.forName("net.sourceforge.jtds.jdbc.Driver"); // Type 4 driver
+
+Class.forName("oracle.jdbc.driver.OracleDriver");
+
+Class.forName("com.mysql.cj.jdbc.Driver");
+			
+			Connection con=DriverManager.getConnection(
+					"jdbc:oracle:thin:@localhost:1521:xe","scott","tiger");
+
+			Connection con=DriverManager.getConnection(
+					"jdbc:mysql://localhost:3306/infinite_december","root","root");
+
+
+Connection to Database : 
+
+By using the Connection interface you can connect to the database. 
+
+Connection con=DriverManager.getConnection("jdbc:odbc:datasource");
+
+Connection connection=DriverManager.getConnection("jdbc:jtds:sqlserver://Prasanna-PC/SqlPractice","sa","Prasanna@123");
+
+Connection con=DriverManager.getConnection(
+	"jdbc:oracle:thin:@localhost:1521:xe","scott","tiger");
+
+The JDBC URL contains the following components : 
+
+1) Protocol Name : Indicates the name of the protocol that is used to access a database.
+2) Sub-protocol Name : Indicates the mechanism to retrieve data from a database. 
+3) Subname : Indicates the Data Source Name (DSN) that contains the database information.
+
+You need to specify the user name and password of the connecting databaes. 
+
+Connection con=DriverManager.getConnection("jdbc:odbc:java","sa","");
+
+3) Create and Execute JDBC Statements : 
+
+
+Statement : This is used to create one valid sql statement. 
+
+Statement st=con.createStatement();
+
+You can fire the select query by using the executeQuery() method and other insert,update and delete dml operations are performed by using executeUpdate() method. 
+
+To store the records retrived by the statement object, we need the help of ResultSet. 
+
+Statement st=con.createStatement();
+ResultSet rs=st.executeQuery("select * from emp");
+
+Types of ResultSets : 
+
+There are 4 types of ResultSets are available to us. 
+
+1. Read Only : Allows you to only read the rows in the ResultSet object. 
+
+2. Forward only : Allows you to move the result set cursor from first row to last row in forward direction only. 
+
+3. Scrollable : Allows you to move the result set cursor forward or backward through the result set. 
+
+4. Updatable : Allows you to update the result set rows retrieved from the database table.
+
+ResultFields : 
+
+TYPE_SCROLL_SENSITIVE -> Specifies that the cursor of the ResultSet object is scrollable and it refect the changes in the data made by other users. 
+
+TYPE_SCROLL_INSENSITIVE -> Specifies that the cursor of the ResultSet object is scrollable and it does not reflect changes in the data made by other users. 
+
+TYPE_FORWARD_ONLY : Specifies that the cursor of the ResultSet object moves in the forward direction only from the first row to the last row. 
+
+
+
+Methods in the ResultSet Interface : 
+
+first() -> Shifts the control of the result set cursor to the first row of the result set.
+
+last() -> Shifts the control of the resultset cursor to the last row of the result set. 
+
+next() -> Move the control to the next row. 
+
+previous() -> Shifts the control of the result set cursor to the previous row. 
+
+_____________________________________________________________
+
+
+
+create table emptest
+(
+   empno int primary key,
+   nam varchar(15),
+   dept varchar(15),
+   desig varchar(15),
+   basic int
+)
+
+insert into emptest values(1,'sowjanya','java','programmer',18444)
+
+create table users
+(
+   uname varchar(15) primary key,
+   passwd varchar(15)
+)
+
