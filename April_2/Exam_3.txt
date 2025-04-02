@@ -1,0 +1,251 @@
+1) Identify the checked exceptions in below 
+
+A) ArithmeticException B) ParseException c) NumberFormatException D) ArrayIndexOutOfBoundsException
+
+2) Identify which statements are true 
+a) finally block code excutes mandetorily
+b) try without catch is possible
+c) one try block contains multiple catch blocks
+d) all the above
+
+3) What is the output for below code
+public class P17 {
+    public static void main(String[] args) {
+        try {
+            System.out.println("B");
+            throw new NumberFormatException();
+        } catch(ArithmeticException e) {
+            System.out.println("A");
+        } catch(Exception e) {
+            System.out.println("C");
+        } finally {
+            System.out.println("Z");
+        }
+    }
+}
+
+A) B Z B) B C Z C) A C Z D) B A Z
+
+4) What would be output for below code
+
+public class P17 {
+    public static void main(String[] args) {
+        try {
+            System.out.println("B");
+            throw new NumberFormatException();
+        } catch(ArithmeticException e) {
+            System.out.println("A");
+        } catch(NumberFormatException e) {
+	   System.out.println("X");
+	} catch(Exception e) {
+            System.out.println("C");
+        } finally {
+            System.out.println("Z");
+        }
+    }
+}
+
+A) B X Z B) B A Z C) B C Z D) Compile Time Error 
+
+5) What would be output for below code
+
+public class E1 {
+
+	static {
+	      try {throw new ArithmeticException("my exception");
+
+	      }
+	      catch(Exception e){
+	        System.out.println("2");
+	      }
+	    }
+	 
+	    public static void main(String[] args){
+	      System.out.println("1");
+	    }
+}
+
+A) 1 2 B) 2 1 C) Compile Time Error D) Runtime Error
+
+6) What would be output for below code
+
+public class E1 {
+	static {
+	      try {throw new ArithmeticException("my exception");
+
+	      }
+	       catch(ArithmeticException e) {
+	         System.out.println("3");
+	       }
+	      catch(Exception e){
+	        System.out.println("2");
+	      }
+	    }
+	 
+	    public static void main(String[] args){
+	      System.out.println("1");
+	    }
+}
+
+A) 1 1 B) 2 2 C) 3 1 D) Runtime Error 
+
+7) What would be output for below code
+
+public class P31 {
+    public static void main(String[] args) {
+        try {
+            int a=5;
+            int b=4;
+            int c=a/b;
+            System.out.println("Hi");
+        } catch(ArithmeticException e) {
+            System.out.println("Divex");
+        } finally {
+            System.out.println("Program End...");
+        }
+    }
+}
+
+A) Compile Time Error B) Hi Program End C) DivEx Program End D) Program End 
+
+8) What would be output for below code
+
+public class P23 {
+    public static void main(String[] args) {
+        int[] a=new int[5];
+        try {
+            a[6]=5/0;
+        } catch(ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array Size Small...");
+        } catch(ArithmeticException e) {
+            System.out.println("Division By Zero Impossible");
+        } catch(Exception e) {
+            System.out.println("General Exception");
+        }
+    }
+}
+
+A) Division by zero impossible B) Array Size Small C) General Exception D) None
+
+9) What would be output for below code
+
+public class P23 {
+    public static void main(String[] args) {
+        int[] a=new int[5];
+        try {
+            a[6]=5/3;
+        } catch(ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array Size Small...");
+        } catch(ArithmeticException e) {
+            System.out.println("Division By Zero Impossible");
+        } catch(Exception e) {
+            System.out.println("General Exception");
+        }
+    }
+}
+
+A) Division by zero Impossible B) General Exception C) None D) Array Size is Small
+
+10) What is the output ofr below code 
+
+public class E1 {
+	public static void main(String[] args) {
+		  try {
+	            int a=5;
+	            int b=4;
+	            int c=a/b;
+	            System.out.println("Hi");
+	        }
+		  catch (Exception e) {
+			  System.out.println("Error");
+		  }
+		  catch(ArithmeticException e) {
+	            System.out.println("Divex");
+	        } finally {
+	            System.out.println("Program End...");
+	        }
+	}
+}
+
+
+A) Hi Program End B) Error C) DivEx D) Compile Time Error 
+
+11) Identify the collection in below ones
+
+A) Array B) ArrayList C) Thread D) Array
+
+12) Which Collection interface does not allow duplicates 
+
+A) List B) Map C) Set D) None  
+
+13) Which collection allows you to retrieve elements in the order they were inserted?
+
+A) HashSet B) LinkedHashSet C) HashTable D) HashMap
+
+14) What are the implementation classes of the List interface?
+
+A) ArrayList B) LinkedList C) Vector D) ALL
+
+15) Which of the following collections is sorted by its natural ordering?
+
+A) HashSet B) TreeSet C) LinkedList D) HashTable
+
+16) Which method removes all elements from a collection?
+
+A) deleteAll B) removeAll() c) clear() d) purge()
+
+17) Which collection contains key/value pairs
+
+A) Set B) HashSet C) Map D) SortedSet
+
+18) What is the output for below code
+
+public class Prog20 {
+    public static void main(String[] args) {
+        Map m = new HashMap(); 
+        m.put(1, "Sanju");
+        m.put(2, "Niki");
+        m.put(3, "Nishtha");
+        m.put(4, "Kolage");
+        m.put(5, "Salve");
+        m.put(6, "Babbar");
+        
+        String res = (String) m.getOrDefault(6, "Not Found");
+        System.out.println(res);
+    }
+}
+A) Compile Time Error B) Babbar C) Niki D) Salve
+
+19) What would be output for below code
+
+public class Prog21 {
+    public static void main(String[] args) {
+        List<Integer> list = new ArrayList<>();
+    list.add(101); 
+    list.add(102);
+    int aValue = list.get(1); 
+
+    System.out.println(aValue); 
+    }
+}
+
+A) 101 B) 102 C) NULL D) Runtime Error 
+
+20) What is true with Map Collection
+
+A) Map interface stores in key/value pairs
+B) Map interface can takes null values
+C) Map cannot contains duplicate keys
+D) All
+
+21) Which list method replaces the element at a specified position?
+a) replace() b) set() c) put() d) insert()
+
+22) Which of these classes should be preferred to be used as a key in a HashMap?
+A) string b) Integer c) Double d) any of these
+23) Comparator interfaces which method
+A) compareTo() B) compare(object,object) c) compareTo() d) None
+24) Type-safety can be provided by 
+A) Generics B) Abstract Class C) Interface D) Collection
+25) Which collections are synchronized
+A) ArrayList B) LinkedList C) Vector D) None
