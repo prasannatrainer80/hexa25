@@ -1,0 +1,29 @@
+1) Show Employ
+2) Search Employ
+
+LeaveDetails
+____________
+
+1) ApplyLeave  : Read (empId,LeaveStartDate,LeaveEndDate,LeaveType,LeaveReason)
+
+  leaveStatus by default its PENDING
+
+   Validations :
+	LeaveStartDate,LeaveEndDate cannot be Yesterday
+        LeaveStartDate cannot be greater than LeaveEndDate
+        NoOfDays must be less than or equal to leaveBalance 
+
+   Functionality :
+	Once LeaveApplied Successfully decrease the LeaveAvailabiity 
+
+2) LeaveHistory  (select * from LeaveHistory where empId=1000)
+
+3) Pending Leave History (DIsplay Managers Subordinates pending leaves history)
+
+4) Accept/Reject (leaveId,ManagerId,Yes/No,ManagerComments) 
+
+If Yes Change Leavestatus as APPROVED
+
+If No Change LeaveStatus to DENIED and send the balance back to avaialbleLeaves
+
+Update ManagerCommens also
