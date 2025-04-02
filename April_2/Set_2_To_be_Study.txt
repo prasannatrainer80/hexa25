@@ -1,0 +1,26 @@
+1) Explain about boxing and unboxing
+
+2) What is the purpose of static variable
+
+3) Explain about collection framework (List, Set and SortedSet interfaces)
+
+4) Explain procedure to eliminate duplicates from list of objects of Employ class
+
+5) What is the purpose of Scanner
+
+6) Explain about Collections.sort method in detail
+
+7) Explain about Comparator and how to implement
+
+8) Explain about LOMBOK framework in detail
+
+9) Write a program to take class as Employ(empno,name,basic) add records to HashSet and remove the duplicates (as if 3 values are same then we need to delete duplcates)
+
+10) Write your own program to implement Comparator interface
+
+11) Explain about exception handling in detail. 
+
+12) What are checked and unchecked exceptions
+
+13) Write a procedure to create user-defined exceptions in java
+
