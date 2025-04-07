@@ -1,0 +1,60 @@
+What is Testing : 
+
+Testing is a process in which defects are identified and subjected for rectification, at last we need to deliver defect free application. 
+
+Manual Testing can be done by testers. 
+
+Unit Testing can be done by developers. 
+
+Here, we need to test each and every line of the code thoroughly and at last we need to generate the defect free application. 
+
+Defect : If tester identifies a mistake known as defect. 
+
+Bug : If programmer accepts the defect that is called bug. 
+
+Error : If programmer identifies mistake known as error. 
+
+Fatal : If client identifies mistake known as fatal. 
+
+In java, we have junit, that which allows you to perform unit testing.
+
+  <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+
+The above dependency to be added for working with Junit. 
+
+org.junit.test is the class that which allows to work with Junit. 
+
+assertEquals()
+assertArrayEquals()
+assertTrue()
+assertFalse()
+assertNull()
+assertNotNull()
+
+assertEquals() -> 
+
+method_to_called, "expected","actual"
+
+if expected and actual are same then the test case will be passed. 
+
+Each test case methods are void methods and annotated with @Test annotation. 
+
+In Junit, we have various annotated methods as 
+
+@BeforeClass : This method will be called only Once before the unit testing performs, as any global initializations to be taken place, then we need to write in @BeforeEach method. 
+
+@AfterClass : This method will be called only once at the end of testing process, this method contains any clean up process to be done
+
+@Before : This method annotated will be called every time for each test case at beginning. If your code contains 5 test cases, then this method will be called 5 times. 
+
+@After : This method annotated will be called everytime at the end of each test case. If your code contains 5 test cases, then this method called 5 times. 
+
+
+
+
+
