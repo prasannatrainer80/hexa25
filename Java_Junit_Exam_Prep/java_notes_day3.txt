@@ -1,0 +1,129 @@
+java.lang.Object is the toplevel class, form which all api classes are derived. 
+
+Object class contains the following methods, where you can override and present your own code. 
+
+hashCode()
+toString()
+equals() 
+
+toString() : This method contains the string representation, which allows you to display the members of the class. 
+
+This method will be called automatically once you print the object. 
+
+equals() : Used to check two object values are equal or not. 
+
+What is the difference between == and equals() 
+
+Boxing and Unboxing : 
+
+Integer.parseInt() : 
+
+"12"
+
+12
+
+The concept of converting value types to reference types known as boxing, and reference types to value types known as unboxing. 
+
+Object is type that which can be used for boxing and unboxing. 
+
+
+int x;
+
+x="Hello";
+x=12;
+x=12.5
+
+Object x;
+
+x="Hello";
+x=12;
+x=12.5;
+
+
+int x1 = (Integer)ob1;
+
+getClass() : Used to display the data type stored in Object class. 
+
+getClass().getName() : Prints the class fullname. 
+
+Method Overloading : 
+_____________________
+
+The concept of using the same method name w.r.t. Different data types/different parameters known as method overloading. Here, the method name must be same, but no.of parameters or type of parameters we are passing here are different. 
+This is example for compile time polymorphism. 
+
+class Test {
+   int a,b;
+   a=5;
+   b=7;
+}
+
+Constructors : used to initilize the member variables of the class. It is special because it has the same
+name as that of class name. 
+
+Rules : 
+_______
+
+	1) It will not contains any return type. 
+
+	2) It will not return any value. 
+
+	3) It will be invoked automatically once the instance of the class created. 
+
+	4) A constructor can be overloaded. 
+
+Types of Constructors : 
+_________________________
+
+
+There are 2 types of constructors as 
+
+1) static constructors : These are called class constructors. Which are used to initilize the static variables of the class. These constructors are invoked automatically before control reaches the entry point. These constructors cannot be overloaded. 
+
+In java we treat static block as static construcors. 
+
+2) instance constructors : These are the constructors that which are invoked automatically once the instance of the class created. These constructors cannot be overloaded. 
+
+
+String.format() :
+
+final keyword : If you dont want to change the value, then please declare any variable as final. 
+
+Properties : 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

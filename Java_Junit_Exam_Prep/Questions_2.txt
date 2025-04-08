@@ -1,0 +1,443 @@
+1) What would be output for below code
+
+	enum Test {
+	    A, B, X, Y, P, C,N;
+	    private Test() {
+        	System.out.println("Hi");
+	    }
+	}
+
+public class P13 {
+    public static void main(String[] args) { 
+        Test t =Test.Y;
+    }
+}
+
+A) Compile Time Error B) Prints Hi 7 times C) No Output D) Hi
+___________________________________________________________________
+2) 
+
+public class P6 {
+	    public void check(int x) {
+        	if (x==2) {
+	            System.out.println("Hi");
+        	} else {
+	            System.out.println("Bye");
+     	   }
+	    }
+	    public static void main(String[] args) {
+        	new P6().check(2);
+	    }
+	}
+A) Compile Time Error B) Runtime Error C) hi D) Bye
+________________________________________________________________
+3) What would be output for below code
+package com.java.thr;
+
+public class Dummy {
+
+	    public static void main(String[] args) {
+	        System.out.println("HI");
+	    }
+	    public static void main() {
+	        System.out.println("Bye");
+	    }
+	    public static void main(String s) {
+	        System.out.println("String");
+	    }
+	    public static void main(int x) {
+	        System.out.println("INT");
+	    }
+}
+A) Hi B) Bye C) Hi BYE STRING INT D) No Output
+____________________________________________________________________
+4) What would be output for below code
+
+public class P1 {
+    public void show(int x) {
+        switch(x) {
+            case 1 : 
+                System.out.println("Hi 1");
+            case 2 : 
+                System.out.println("Bye 2");
+            case 3 : 
+                System.out.println("Hello 3");
+                break;
+            case 4 :
+                System.out.println("Test 4");
+            case 5 : 
+                System.out.println("Demo 5");
+            default :
+                System.out.println("Default Message");
+        }
+    }
+    public static void main(String[] args) {
+        P1 obj = new P1();
+        obj.show(3);
+    }
+}
+
+A) Hello 3 Test 4 Demo 5 Default Message B) Hello 3 C) Compile Time Error
+D) Runtime Error
+_____________________________________________________________
+
+5) What would be output for below code
+
+class First {
+    public void show(double x) {
+        System.out.println("Double " +x);
+    }
+
+    public void show(float x) {
+	System.out.println("Float " +x);
+    }
+    public void show(long x) {
+	System.out.println("Long " +x);
+    }
+    public static void main(String[] args) {
+		new Dummy().show(12);
+	}
+}
+A) Double 12 B) Float 12 C) Long 12 D) Object 12 
+___________________________________________________________________
+6) What is the output for below code
+
+public class Prog17 {
+    public static void main(String[] args) {
+        test(101); 
+        test(new Integer(101));
+    
+      }
+      public static void test(Object iObject) {
+        System.out.println("Object=" + iObject);
+      }
+      public static void test(Integer iObject) {
+        System.out.println("Integer=" + iObject);
+      }
+    
+      public static void test(int iValue) {
+        System.out.println("int=" + iValue);
+      }
+}
+
+A) int=101 Integer=101 B) Object 101 Int 101 C) int=101 Object=101
+d) Runtime Error
+_________________________________________________________________
+7) public class Dummy {
+    public static void main(String[] args) {
+        int i = 1; 
+        int j = 0; 
+        j = ++i + 1;  
+        System.out.println(j + " " +i);
+
+    } 
+}
+
+A) 2 2 B) 1 2 C) 3 2 D) 1 1
+_______________________________________________________________________
+
+8) Identify the scenario and tell what is relationship it is 
+
+class Animal {
+}
+class Cow extends Animal {
+}
+class Crocodile extends Animal {
+}
+class Lion extends Animal {
+}
+
+A) Has-a B) overloading C) Is-a D) None
+
+_____________________________________________________________________
+
+9) What would be output for below code
+
+public class P14 {
+    public static void main(String[] args) {
+        String arr[] =new String[]{"Divya",
+            "Fantasy"};
+        String a="divya";
+        System.out.println(a.equals(arr[0]));
+    }
+}
+
+A) true B) false c) Compile Time Error D) No Output
+_________________________________________________________________
+10) What would be output for below code
+
+public class Test {
+	public static void main(String[] args) {
+	 	Test obj = new Test();
+		System.out.println(obj);
+	}
+}
+A) Compile Time Error B) Runtime Error C) hashCode D) package.class@hascode
+
+______________________________________________________________
+
+11) What would be output for below code
+
+class C1 {
+     void test() {
+        System.out.println("Welcome...");
+    }
+}
+class C2 extends C1 {
+    void test() {
+        
+        System.out.println("Bye");
+    }
+}
+public class P28 {
+    public static void main(String[] args) {
+        C1 obj = (C1)new C2();
+        obj.test();
+    }
+}
+
+A) Hi B) Bye C) No Output D) Runtime Error
+________________________________________________________________
+
+12) What would be output for below code
+
+class C1 {
+    int a;
+    public C1(int a) {
+        this.a=a;
+    }
+}
+class C2 extends C1 {
+    int a;
+    int b;
+    public C2(int a) {
+        super(a);
+        this.a=12;
+        this.b=5;
+    }
+    public C2(int a,int b) {
+        super(a);
+        this.b=b;
+        System.out.println(a+ "  "+b);
+    }
+}
+public class P30 {
+    public static void main(String[] args) {
+        new C2(15,56);
+    }
+}
+
+A) 12 5 B) 12 56 c) 15 56 D) 12 15
+_______________________________________________________________________________
+
+13) What would be output for below code 
+
+public class P34 extends String {
+    public static void main(String[] args) {
+        System.out.println("Strings are Immutable...");
+    }
+}
+
+A) Strings are Immutable B) Runtime Error C) Compile Time Error D) None
+
+_______________________________________________________________________________
+
+14) What would be output for below code
+
+class Employ {
+}
+class Customer {
+}
+public class Quiz30 {
+    public void check(Object ob) {
+        if (ob instanceof Employ) {
+            System.out.println("Its Employ Class Object");
+        } else if (ob instanceof Customer) {
+            System.out.println("Its Customer Class Object");
+        } else {
+            System.out.println("its invalid Class object...");
+        }
+    }
+    public static void main(String[] args) {
+       new Quiz30().check(new Quiz30());
+    }
+}
+
+A) Its Employ class Object B) its Customer Class Object C) Its Invalid Class Object
+D) Runtime Error
+
+___________________________________________________________________________
+
+15) What is the output for below code
+
+class Demo {
+    static {
+        System.out.println("Hi");
+    }
+}
+public class P40 {
+    public static void main(String[] args) {
+        System.out.println("Bye");
+    }
+    static {
+        System.out.println("Hello");
+    }
+}
+
+A) Hi Hello Bye B) Bye Hello C) Hello Bye D) Runtime Error 
+_____________________________________________________________________________
+
+16) What would be output for below code
+
+class C1 {
+    private void test() {
+        System.out.println("Welcome...");
+    }
+}
+
+class C2 extends C1 {
+    public void test() {
+        System.out.println("Bye");
+    }
+}
+
+public class P28 {
+    public static void main(String[] args) {
+        C2 obj = new C2();
+        obj.test();
+    }
+}
+
+A) Compile Time Error B) Runtime Error C) Hi B) Bye 
+
+_______________________________________________________________________________
+
+17)
+
+public class Dummy {
+    enum WeekDays {
+    Sunday,
+    Monday,
+    Tuesday,
+    Wednesday,
+    Thursday,
+    Friday,
+    Saturday
+    }
+    private void WeekDays() {
+        System.out.println("Hi");
+	}
+    public static void main(String[] args) {
+    	WeekDays w = WeekDays.Friday;
+		new Dummy().WeekDays();
+    }
+}
+
+A) Compile Time Error as Enum don't have methods B) Runtime Error 
+C) Hi D) No output
+_________________________________________________________________________
+18) Which statement is true about Abstract Class
+
+i) Abstract class we can create direct object
+ii) Abstrac class contains abstract/non-abstract methods
+iii) You cannot inherit abstract class 
+iv) All the above
+
+A) ii B) i C) iii D) iv 
+
+_________________________________________________________________________
+
+19) Which statement is true about interfaces 
+
+i) interface methods are public and abstract by default
+ii) interface variables are static and final by default
+iii) interface supports default methods
+iv) All the Above 
+
+A) ii B) iv C) iii D) i
+
+____________________________________________________________________________
+
+20) Which statement(s) are true w.r.t. has-a relationship
+
+A) Has a relation known as Composition
+B) Instance of one class refers to instance of another class
+C) The relationship helps to minimize the bugs
+D) All the above
+
+A) ii B) iv C) iii D) i
+_______________________________________________________________________________
+21) What is the output for below code
+
+public class Quiz9
+{
+    int x;
+    public static void main( String[] args )
+    {
+        Quiz9 obj1 = new Quiz9();
+        obj1.x=12;
+        Quiz9 obj2 = obj1;
+        obj2.x=13;
+        System.out.println(obj1.x);
+    }
+}
+
+A) 12 B) Compile Time Error C) 13 D) Runtime Error 
+________________________________________________________________________________
+
+22) What is the syntax to access default method in interface
+
+A) interfaceName.method() B) method.interface() c) interfaceName.super.method()
+d) interfaceName.super.class.method()
+
+________________________________________________________________________________
+
+23) 
+
+public class Hello {
+	public void show() {
+		System.out.println("Hi");
+        }
+	public static void main(String[] args) {
+	 Hello hello;
+	 hello.show();
+        }
+}
+
+A) Hi B) Runtime Error C) No Ouput D) Compile Time Error as use of null object
+
+______________________________________________________________________________
+
+24) Write the syntax to implement interface to another interface
+
+A) interface IOne implements ITwo { } B) interface IOne extends ITwo { }
+C) interface IOne,Itwo{ } D) interface IOne static ITwo {} 
+________________________________________________________________________________
+25) What would be output for below code
+
+class C1 { 
+    static {
+        System.out.println("C1 con");
+    }
+    public C1() {
+        System.out.println("Constructor C1");
+    }
+}
+
+class C2 extends C1 { 
+    static {
+        System.out.println("C2 con");
+    }
+    public C2() {
+        System.out.println("Constructor C2");
+    }
+}
+public class Dummy {
+    public static void main(String[] args) {
+    	new C2();
+       //C2 obj = new C2();
+    }
+}
+
+A) Compile Time Error B) C1 con C2 con Constructor C1 Constructor C2
+C) Constructor C1 Constructor C2 C1 con C2 con  D) Runtime Error 

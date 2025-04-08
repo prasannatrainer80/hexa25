@@ -1,0 +1,23 @@
+ <dependency>
+      <groupId>org.jdbi</groupId>
+      <artifactId>jdbi</artifactId>
+      <version>2.73</version>
+    </dependency>
+   <dependency>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.18</version>
+    </dependency>
+
+  public static List<Employ> showEmploy() {
+       return dao().showEmploy();
+   }
+
+ List<Employ> employList = EmployFactory.showEmploy();
+        for(Employ e : employList) {
+            System.out.println(e);
+        }
+
+<module name="ParameterNumber">
+   <property name="max" value="30"/>
+</module>

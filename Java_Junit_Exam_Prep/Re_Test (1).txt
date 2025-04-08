@@ -1,0 +1,294 @@
+1) Which of the following method does not belongs to Object class
+
+A) toString() B) equals() C) run() D) hashCode()
+
+___________________________________________________________________________________
+2) Identify Relation in this code
+
+class Mcq
+{
+}
+
+class Hacthon
+{
+}
+
+class Main
+{
+   public static void main(String[] args) {
+	Hackthon h = new Hackthon();
+	Mcq m = new Mcq();
+   }
+}
+
+A) is-a  B) Inheritance C) constructor D) Has-A
+___________________________________________________________________________________
+
+3) What would be output for below code
+
+class Example1 {
+	public void show(double x) {
+	   System.out.println("Double  " +x);
+	}
+	public void show(String x) {
+	    System.out.println("String " +x);
+	}
+	public void show(Object x) {
+	   System.out.println("Object  " +x);
+	}
+	public static void main(String[] args) {
+	   new Example1().show(12);
+	}
+}
+
+A) Double 12 B) String 12 C) Object 12 D) Runtime Error
+_________________________________________________________________________________
+
+4) What is the output for below code 
+
+class Test {
+	static int score;
+	public void increment() {
+	   score++;
+	   System.out.println(score);
+	}
+	public static void main(String[] args) {
+		Test obj1 = new Test();	
+		Test obj2 = new Test();
+		Test obj3 = new Test();
+		obj1.increment();		
+		obj2.increment();
+		obj3.increment();
+	}
+}
+
+A) 1 1 1 B) 0 0 0 C) 1 2 3 D) Runtime Error 
+________________________________________________________________________
+
+5) Identify the syntax to implement inheritance
+
+A) class First {
+}
+class Second implements First {
+}
+
+B) class First {
+}
+class Second : First {
+}
+
+C) class First {
+}
+
+class Second extends First {
+}
+D) 
+class First {
+}
+class Second extend First {
+}
+_____________________________________________________________________________
+
+6) Identify the output for below code
+
+ enum Example {
+	X,Y,Z,A,B
+   }
+   class Hello {
+   private Example() {
+	System.out.println("infinite");
+   }
+   public static void main(String[] args) {
+	Example e = Example.A;
+   }
+   }
+
+A) Error as no constructor in enum B) Prints infinite 5 times C) Prints infinite 1 time
+B) Runtime Error
+____________________________________________________________________________________
+
+7) Identify output for below code
+
+class Hello {
+	static boolean flag;
+	public static void main(String[] args) {
+	     System.out.println(flag);
+	}
+}
+
+A) Compile Time Error B) false C) Runtime Error D) true
+
+___________________________________________________________________________________
+
+8) Write the syntax to add interface to derived class
+
+A) class Derived extends Base, interface_name
+B) class Derived implemnets base, interface_name
+C) class Derived extends Base implements interface_name
+D) class Derived implements Base extends interface_name
+
+________________________________________________________________________________
+
+9) Which statement(s) are true
+
+(i) interface methods are public and abstract by default
+(ii) interface contains default methods
+(iii) interface variables are final by default
+(iv) interface can be added to class using implements keyword
+
+A) statement ii B) statement ii,III,i C) statement i, iii, iv D) All the Above
+______________________________________________________________________________
+
+10) What would be output for below code
+
+class Test {
+	public static void main(String[] args) {
+	    int x=12;
+	    System.out.println(x++ + x++ + ++x);
+	}
+}
+
+A) 40 B) 39 C) 38 D) 41
+
+________________________________________________________________________________
+
+11) What would be output for below code
+
+class Hello {
+	public void show() {
+	   if (null==null) {
+		System.out.println("Hi");
+	   } else {
+		System.out.println("Bye");
+	   }
+	}
+	public static void main(String[] args) {
+		new Hello().show();
+	}
+}
+A) Compile Time Error B) Runtime Error C) Hi D) Bye
+_______________________________________________________________________________
+12) What is true in inheritance in java
+
+(i) Multiple inheritance supported in java by using classes
+(ii) We cannot pass data from derived class to base class
+(iii) super keyword used to call base class methods in derived class
+(iv) We cannot make same base class method in derived class  
+
+A) i B) iii C)ii D) iv
+
+________________________________________________________________________________
+13) Which statement(s) are true w.r.t. IS-A relation
+
+i) Is-A relationship uses extends keyword
+ii) IS-A relationship is additionally used for code reusability in Java and to avoid code redundancy.
+iii) IS-A relationship is tightly coupled, which means changing one entity will affect another entity.
+iv) IS-A relationship is unidirectional
+
+A) i B) All C) iii D) ii
+
+______________________________________________________________________________________
+
+14) What would be output for below code
+
+class Main
+{
+	public static void main() {
+		System.out.println("Hello");
+	}
+	public static void main(int x) {
+	    System.out.println("Infinite");
+	}
+	public static void main(String[] args) {
+	    System.out.println("Test Main");
+	}
+} 
+
+A) Hello B) Test Main C) Compile Time Error D) Runtime Error
+_____________________________________________________________________________________
+
+15) Which method of Object class will returns int value
+
+A) equals() B) toString() C) hashCode() D) None
+__________________________________________________________________________________
+16)
+class First {
+	void show() {
+	  System.out.println("Class Second...");
+	}
+}
+
+class Second extends First {
+	void show() {
+	   System.out.println("Class First...");
+	}
+	public static void main(String[] args) {
+		new Second().show();
+	}
+}
+
+A) class First B) Class Second C) Compile Time Error D) Runtime Error
+_________________________________________________________________________________
+
+17) Identify which line throws error
+
+class Hello {
+	private String s1="Hello";
+	public String s2="Bye";
+	protected String s3="Infinite";
+}
+
+class Main {
+	public static void main(String[] args) 
+	    Hello hello = new Hello(); // line 1
+	    hello.s1; // line 2
+	    hello.s2; // line 3
+	    hello.s3; // line 4
+	}
+}
+
+A) line 1 B) line 2 C) line 3 D) line 4
+
+_____________________________________________________________________________
+
+18) Which is true about Abstract classes
+(i) Abstract class contains abstract/non-abstract methods
+(ii) Abstract class contains constructor
+(iii) We can return an object of Abstract Class
+(iv) We cannot create direct objects to abstract class
+
+A) i B) ii,iv c)i,ii,iv D) All the Above
+
+______________________________________________________________________________
+
+19) What would be output for below code
+
+class Main {
+	public static void main(String[] args) {
+	   String str="Hello";
+	   System.out.println(str.concat(" World"));
+	}
+}
+
+A) Hello B) Hello World C) Compile Time Error D) Runtime Error
+
+________________________________________________________________________________
+
+20) What would be output for below code
+
+class Cricket {
+	static int score;
+	public void increment(int x) {
+	   score+=x;
+	}
+	public static void main(String[] args) {
+	   new Cricket().increment(12);
+	   new Cricket().increment(7);
+	   new Cricket().increment(10);
+	   System.out.println(score);
+       }
+}
+
+A) 12 B) 10 C) 7 D) 29
+
+

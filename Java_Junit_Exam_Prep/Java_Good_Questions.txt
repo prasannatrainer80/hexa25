@@ -1,0 +1,330 @@
+int[] a=new int[6];
+a[10]=66;
+
+ArrayIndexOutOfBoundsException
+_________________________________________________________________________________________
+
+public class Ex2 {
+    int a=18;
+    public static void show() {
+        System.out.println("Age  " +a);
+    }
+    public static void main(String[] args) {
+        new Ex2().show();
+    }
+}
+
+ error: non-static variable a cannot be referenced from a static context
+
+________________________________________________________________________________________________
+
+import java.util.ArrayList;
+public class Ex3 {
+   
+    public static void main(String[] args) {
+       ArrayList<Integer> s = new ArrayList<Integer>();
+       s.add(55);
+       s.add(12);
+       s.add(33);
+       s.add(77);
+       System.out.println(s.get(4));
+    }
+}
+
+java.lang.IndexOutOfBoundsException: Index: 4,
+
+____________________________________________________________________________________________________
+
+
+Megha went to supermarket to purchase items,  
+
+she took 5 chackolets, 3 biscuts and 2 soaps
+
+which collection used to store the above data. 
+
+List
+Array
+Set
+interface
+
+List is answer.
+
+_____________________________________________________________________________________________
+
+
+Overloaded methods should differ in arg list (T)
+Overloaded methods may differ in return type (F)
+Overloaded methods may differe in access specifier (F)
+
+_____________________________________________________________________________________________
+
+Class will have no.of constructors that differ in parameter list known as 
+
+Constructor Overloading 
+
+___________________________________________________________________________________________________
+
+Which is true with super and this 
+
+this used to refer the current class instance 
+super used w.r.t. concept of inheritance
+
+____________________________________________________________________________________________________
+
+import java.util.ArrayList;
+public class Ex3 {
+   
+    public static void main(String[] args) {
+       String month;
+       month = "Feb";
+       switch(month) {
+           case "Feb" : System.out.println("Hi");
+                        break;
+           case "Mar" : System.out.println("Hello");
+                         break;
+           case "Apr" : System.out.println("Bye");
+                        break;
+           case "May" : System.out.println("Test");
+                        break;
+            default : 
+                System.out.println("Default");
+                break;
+
+       }
+    }
+}
+
+Prints "Hi" as we can take strings in Case also from jdk1.7
+
+____________________________________________________________________________________
+
+
+import java.util.ArrayList;
+interface Mobile {
+    int memory=10;
+    public void calling();
+}
+
+interface Accessories extends Mobile {
+    public abstract void headPhone();
+}
+
+
+public class Ex3 implements Accessories {
+   
+    public static void main(String[] args) { // line 4
+       public void headPhone() {
+           System.out.println("Hi");
+       }
+    }
+}
+
+Ex3.java:15: error: illegal start of expression
+       public void headPhone() {
+
+Error in Line4 
+
+__________________________________________________________________________________________________________________
+
+import java.util.ArrayList;
+
+class Test {
+    void tests() {
+        System.out.println("Hi");
+    }
+}
+
+class Fest extends Test {
+    static void tests() {
+        System.out.println("Bye");
+    }
+}
+public class Ex3 {
+   
+    public static void main(String[] args) { // line 4
+     Test obj = new Test();
+     obj.tests();
+    }
+}
+
+What would be the output 
+
+Compile-Time error as
+
+: tests() in Fest cannot override tests() in Test
+    static void tests() {
+
+________________________________________________________________
+
+import java.util.ArrayList;
+
+public class Ex3 {
+    static Ex3() { System.out.println("Hello");}
+    public static void main(String[] args) { 
+     System.out.println("Hi");
+    }
+}
+
+The above code gives compile time error, because static constructor not there in java,
+static {} acts as static constructor. 
+
+So compileTime Error
+
+Modifier static not allowed...
+
+___________________________________________________________________________________________________________
+
+
+import java.util.ArrayList;
+
+public class Ex3 {
+    
+    public static void main(String[] args) { 
+        String s1="abc";
+        String s2="abc";
+        System.out.println(s1==s2);
+        System.out.println(s1.equals(s2));
+    }
+}
+
+true
+true
+____________________________________________________________________________________________________________
+
+
+To access a method in same package and other package derived classes, which modifier we want 
+
+protected
+public
+
+__________________________________________________________________________________________________________
+
+
+import java.util.ArrayList;
+
+public class Ex3 {
+    
+    public Ex3() {}
+    public static void main(String[] args) { 
+     
+    }
+}
+
+What is public Ex3() here 
+
+Constructor
+
+______________________________________________________________________________________________________________
+
+A static method can be called as class method (T/F) 
+
+import java.util.ArrayList;
+
+public class Ex3 {
+    
+    public Ex3() {}
+    public static void main(String[] args) { 
+        String res = "i" + "like" + "java";
+        System.out.println(res);
+    }
+}
+
+output : i like java
+
+___________________________________________________________________________________________________________
+
+Mocking API contains
+
+Expectations
+Allocation
+Invocations
+
+___________________________________________________________________________________________________________
+
+Top Level class in java 
+
+java.lang.Object
+_____________________________________________________________________
+
+import java.util.ArrayList;
+
+public class Ex3 {
+    
+    public Ex3() {}
+    public static void main(String[] args) { 
+       int x=1;
+       if(x) {
+           System.out.println("Hi");
+       } else {
+           System.out.println("Bye");
+       }
+    }
+}
+
+O/P
+
+ incompatible types: int cannot be converted to boolean
+
+________________________________________________________________________________________________________
+
+
+Which Collection not synchronized
+
+java.util.ArrayList
+
+_______________________________________________________________________________________________________
+
+import java.util.ArrayList;
+
+public class Ex3 {
+    
+  static {
+      System.out.println("Hi");
+  }
+  static {
+      System.out.println("Bye");
+  }
+    public static void main(String[] args) { 
+      
+    }
+}
+
+O/P : Hi
+      Bye
+_____________________________________________________________________________________________________________
+import java.util.ArrayList;
+
+ interface IOne {
+      int a=10;
+      void draw();
+  }
+  
+public class Ex3 implements IOne {
+    
+    public void draw() {}
+    public static void main(String[] args) { 
+      System.out.println(a++);
+    }
+}
+
+Error : CompileTime
+
+interface variables are final, we cannot change the values for them
+
+cannot assign a value to final variable a
+
+__________________________________________________________________________________________________________
+
+used for avoid memory leakage  finalize()
+used for avoid resource leakage finally {} 
+used in constant declaration   final
+
+______________________________________________________________________________________________________________
+
+
+interface methods are public/abstract but not static by default
+
+_______________________________________________________________________________________________
+
+
+

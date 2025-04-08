@@ -1,0 +1,483 @@
+Access Modifiers :
+__________________
+
+private :   Within the class
+public  :   Entire Application
+protected : Within current/derived class.
+friendly :  Within all classes of current package. 
+
+
+final keyword :
+
+final int x;
+
+If you have a class as final, can we inherit ???
+
+What is Method Overloading : 
+_____________________________
+
+Using the same method name w.r.t. Different data types or different no.of parameters known as method overloading. 
+
+class Prog1 {
+public int sum(int x,int y) {
+return x+y;
+}
+
+public void sum(int x, int y) {
+System.out.println("Hello");
+}
+
+public static void main(String[] args) {
+new Prog1().sum(12,5);
+}
+}
+
+____________________________________________________________________________
+
+class Prog2 {
+public static void main(String[] args) {
+int x;
+System.out.println(x);
+}
+}
+
+________________________________________________________________________________
+
+class Prog3 {
+static boolean flag;
+public static void main(String[] args) {
+ System.out.println(flag);
+}
+}
+__________________________________________________________________________________
+
+class Demo {
+  static {
+    System.out.println("Hello");
+  }
+  Demo() {
+    System.out.println("Hi");
+  }
+  public static void main(String[] args) {
+   new Demo();
+  }
+}
+
+___________________________________________________________________________________________
+
+
+class Test {
+   Test() {
+    System.out.println("Hi");
+   }
+}
+
+class Demo extends Test {
+   Demo() {
+    System.out.println("Demo");
+   }
+}
+public class Inh1 {
+   public static void main(String[] args) {
+     new Demo();
+   }
+}
+
+__________________________________________________________________________________
+
+
+class Test {
+   Test() {
+    System.out.println("Hi");
+   }
+}
+
+class Demo extends Test {
+   private Demo() {
+    System.out.println("Demo");
+   }
+}
+public class Inh1 {
+   public static void main(String[] args) {
+     new Demo();
+   }
+}
+
+____________________________________________________________________________________________
+
+
+public class Prog2 {
+ public static void main(String[] args) {
+    int x=11;
+    int y = ++x;
+    System.out.println(x + " " +y);
+  }
+}
+
+
+________________________________________________________________________________________
+
+
+public class Prog3 extends String {
+  public static void main(String[] args) {
+    System.out.println("String are immutable...");
+   }
+}
+
+__________________________________________________________________________________________
+
+public class P1 {
+    public void show(int x) {
+        switch(x) {
+            case 1 : 
+                System.out.println("Hi 1");
+                break;
+            case 2 : 
+                System.out.println("Bye 2");
+                break;
+            case 3 : 
+                System.out.println("Hello 3");
+            case 4 :
+                System.out.println("Test 4");
+            case 5 : 
+                System.out.println("Demo 5");
+            default :
+                System.out.println("Default Message");
+        }
+    }
+    public static void main(String[] args) {
+        P1 obj = new P1();
+        obj.show(3);
+    }
+}
+___________________________________________________________________________________________________________
+
+What is the top level class in java ???
+
+Object
+
+What is the default package in java 
+
+java.lang 
+
+Which method of Object class of java will have the string representation 
+
+toString() 
+
+public class Demo {
+ public static void main(String[] args) {
+    int[] a=new int[]{12,5};
+    int[] a = {12,5};
+    int[] a[] = new int[]{12,5};
+    int[] a[] = {12,5}
+  }
+}
+
+Identify the correct declarations for array. 1 & 2 are correct
+
+___________________________________________________________________________________________________________________
+
+public class P2 {
+    public void show(Object ob) {
+        if (ob == "ABC") {
+            System.out.println("Correct A AND D");
+        } else {
+            System.out.println("Error B AND C");
+        }
+    }
+    public static void main(String[] args) {
+        String s="ABC";
+        // int a = 2;
+        P2 obj=new P2();
+        obj.show(s);
+    }
+}
+
+What is Output for the program :
+
+________________________________________________________________________________________________________________________
+
+
+public class P9 {
+    static int count=0;
+   public void increment()
+   {
+       count++;
+   }
+   public static void main(String args[])
+   {
+       P9 obj1=new P9();
+       P9 obj2=new P9();
+       P9 obj3=new P9();
+       obj1.increment();
+       obj2.increment();
+       obj3.increment();
+       System.out.println(count);
+   }
+}
+
+
+
+___________________________________________________________________________
+
+enum Test {
+	    A, B, X, Y, P, C,N;
+	    private Test() {
+        	System.out.println("Hi");
+	    }
+	}
+
+public class P13 {
+    public static void main(String[] args) { 
+        Test t =Test.Y;
+    }
+}
+
+
+______________________________________________________________________________
+
+
+public class P14 {
+    public static void main(String[] args) {
+        String arr[] =new String[]{"Divya",
+            "Fantasy"};
+        String a="Divya";
+        System.out.println(a.equals(arr[0]));
+    }
+}
+
+________________________________________________________________________________________
+
+
+public class P15 {
+    public static void main(String[] args) {
+        try {
+            int x=5/0;
+        } catch(ArithmeticException e) {
+            System.out.println("Arithmetic Exception");
+        }
+        catch(Exception e) {
+            System.out.println("Global Exception");
+        }
+
+    }
+}
+
+
+_____________________________________________________________________________________________________
+
+public class P16 {
+    public static void main(String[] args) {
+        try {
+            System.out.println("B");
+            throw new Exception();
+        } catch(ArithmeticException e) {
+            System.out.println("A");
+        } catch(Exception e) {
+            System.out.println("C");
+        } finally {
+            System.out.println("Z");
+        }
+    }
+}
+
+____________________________________________________
+
+public class P17 {
+    public static void main(String[] args) {
+        try {
+            System.out.println("B");
+            throw new NumberFormatException();
+        } catch(ArithmeticException e) {
+            System.out.println("A");
+        } catch(Exception e) {
+            System.out.println("C");
+        } finally {
+            System.out.println("Z");
+        }
+    }
+}
+
+____________________________________________________________________________________________________
+
+public class P23 {
+    public static void main(String[] args) {
+        int[] a=new int[5];
+        try {
+            a[6]=5/0;
+        } catch(ArrayIndexOutOfBoundsException e) {
+            System.out.println("Array Size Small...");
+        } catch(ArithmeticException e) {
+            System.out.println("Division By Zero Impossible");
+        } catch(Exception e) {
+            System.out.println("General Exception");
+        }
+    }
+}
+
+
+_________________________________________________________________________________________________________
+
+
+public class P26 {
+    public static void main(String[] args) {
+        int[] a=new int[]{12,5,3,23,45};
+        for(int i : a) {
+            System.out.println(a);
+        }
+        
+    }
+}
+
+____________________________________________________________________________________________________________
+
+public class P31 {
+    public static void main(String[] args) {
+        try {
+            int a=5;
+            int b=4;
+            int c=a/b;
+            System.out.println("Hi");
+        } catch(ArithmeticException e) {
+            System.out.println("Divex");
+        } finally {
+            System.out.println("Program End...");
+        }
+        System.out.println("Program from Sept Batch...");
+    }
+}
+
+_______________________________________________________________________________________________
+
+public class P36 {
+    public static void main(String[] args) {
+        if (null==null) {
+            System.out.println("Hi");
+        } else {
+            System.out.println("Bye");
+        }
+    }
+}
+
+___________________________________________________________________________________________________
+
+
+class Demo {
+    static {
+        System.out.println("Hi");
+    }
+}
+public class P40 {
+    public static void main(String[] args) {
+        System.out.println("Bye");
+    }
+    static {
+        System.out.println("Hello");
+    }
+}
+
+
+__________________________________________________________________________________________________
+
+public class Quiz3 {
+    public static void main(String[] args) {
+        System.out.println("5" +3+8); 
+        System.out.println("5+3" +8);  
+        System.out.println("5" -3+8); 
+        System.out.println("5" +3-8); 
+    }
+}
+
+___________________________________________________________________________________________________
+
+
+Which is the top level interface for all exceptions
+
+Throwable
+
+Identify checked Exceptions in below
+
+NumberFormatException
+ParseException
+ArithmeticException
+ArrayIndexOutOfBoundsException
+
+What is the difference between checked/unchecked Exceptions 
+
+public class Quiz13 {
+    public static void main(String[] args) {
+        String s1 = "Hexaware";
+        String s2 = new String("Hexaware");
+        System.out.println(s1==s2);
+        System.out.println(s1.equals(s2));
+        String s3 = "Hexaware";
+        System.out.println(s1==s3);
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,163 @@
+Maven 
+
+Junit
+
+Java Revision w.r.t Exam Perspective 
+
+
+___________________________________________________________________________________________________________________
+
+What is Maven
+
+Why Maven
+
+What are dependencies
+
+What is Maven Life Cycle 
+
+
+If you create normal java project, you need to download and add jar files to the classpath, then it leads to lot of insonsitency issues, because which jar you have to download, and is it relevant or not. So, such kind of problem you have to overcome, then we need the help of maven. 
+
+If you want to compile entire project as a unit then we need the help of maven. 
+
+*** Maven allows you to create a project, where no need to worry about downloading external jar files ***
+
+For creating a maven project, internet is mandetory, as it downloads all depenencies from internet. 
+
+How to Create maven project, 
+
+You can make Console/Web projects using Maven. 
+
+To Create a console Project
+
+
+mvn archetype:generate -DgroupId=com.hexaware.trainer -DartifactId=MavenHello -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4 -DinteractiveMode=false
+
+In this, 
+
+groupId always points to the package name we are making for the project. 
+
+artifactId always says which Project you have to make it. 
+
+
+Once you create a maven console project, it will have the following things as
+
+src folder 
+
+pom.xml file. 
+
+
+src folder contains 2 subfolders as
+
+main
+test
+
+main : Contains all the model/business logic and execution part. {till now we touch only main}
+test : Contains all the test files, junit/jmock you need to do, then we need to write the code in test folder. 
+
+POM (Project Object Model) 
+
+Which is responsible for giving all dependencies. 
+
+<dependencies>
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>4.11</version>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+POM file contains the above tags as <dependencies> 
+
+Where we have to list out all dependencies. 
+
+it contains the tags as 
+ <groupId>junit</groupId>  -> Package Name 
+ <artifactId>junit</artifactId> -> Project Name
+ <version> : Contains which version of jar you need to download once you compile. 
+ <scope> : It contains only for test dependencies. For normal dependencies you can remove this tag. 
+
+
+How to compile a project 
+
+mvn compile 
+mvn clean compile
+______________________________________________________________________________________________________________________________
+
+Testing : 
+
+Code Coverage
+Line Path
+etc...
+
+Your project, if the code coverage not crossing 85%, your project will not be evaluated, we cannot make any war file also. 
+
+I am expecting the code coverage to your project as 95% min. 
+
+
+Unit Testing can be done by the developers. 
+
+
+In Unit testing, each and every unit of the code will be tested successfully. Then only we can approve the application as Defect Free application. 
+
+To start with Junit, we need
+
+import org.junit.Test;
+
+Please import the above package. 
+
+Now, each test case will be annotated with annotation @Test
+
+assertEquals() : Contains the value as expected (vs) actual
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

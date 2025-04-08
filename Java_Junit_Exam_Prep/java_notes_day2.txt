@@ -1,0 +1,104 @@
+switch...case : Used to implement menu driven program. 
+
+switch(expr) {
+   case expr1 : statement(s);
+		break;
+   case expr2 : statement(s);
+		break;
+   case expr3 : statement(s);
+		break;
+   ...
+   ...
+   ...
+   default :
+		statement(s);
+		break;
+}
+
+
+looping control structures : 
+______________________________
+
+1) while loop : 
+
+	This loop executes all the statements repeatedly until the condition remains true, if the condition remains false, then it comes out of the loop. For every loop, basically there are 3 phases as
+
+	(i) Initialization
+
+	(ii) Condition 
+
+	(iii) Increment/Decrement 
+
+
+  	Initialization performed at the beginning of the loop.
+
+	Condition will be at conditional block of the loop. 
+
+	Increment/Decrement performed before closing the loop. 
+
+
+2) for loop : 
+
+	This loop executes all the statements repeatedly until the condition remains true, 
+		if the condition remains false, then it comes out of the loop. 
+
+	for(initialization;condition;increment/decrement) {
+	   statement(s);
+	}
+
+
+Arrays : An array is the finite ordered set of homogeneous elements, means all the elements belongs to same data type. 
+Elements of the array are stored in successive memory locations. 
+
+int[] a = new int[]{12,5,677,44};
+a[0]=12;
+a[1]=5;
+a[2]=677;
+a[3]=44;
+
+  int[] a = new int[]{12,5,77,32,88};
+        // for(int i=0;i<a.length;i++) {
+        //     System.out.println(a[i]);
+        // }
+        for(int i : a) {
+            System.out.println(i);
+        }
+
+In enhased for loop, at first i value points to the first element in array A, internally it has collection called Enumerator 
+after processing the first element, it checks next element is there or not by using hasMoreElements() which returns the boolean value.  if hasMoreElements() returns true, then it moves to the next element by using hasNextElement() method. It repeats as soon as hasMoreElements() returns false. 
+
+
+There are 2 types of memories as 
+
+	(i) STACK
+
+	(ii) HEAP 
+
+*** Value types will be stored in STACK Memory, and refernece types will be stored in HEAP memory ***
+
+Strings are immutable, means once they are assigned we cannot change them by using any string methods. 
+
+What is the top level class in java,
+
+java.lang.Object is the top level class from which all api methods are derived. 
+
+What are the predefined methods of java.lang.Object class are 
+
+equals() 
+hashCode()
+toString() 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,145 @@
+Java Lambda Expressions
+Lambda expression is a new and important feature of Java which was included in Java SE 8. It provides a clear and concise way to represent one method interface using an expression. It is very useful in collection library. It helps to iterate, filter and extract data from collection.
+
+The Lambda expression is used to provide the implementation of an interface which has functional interface. It saves a lot of code. In case of lambda expression, we don't need to define the method again for providing the implementation. Here, we just write the implementation code.
+
+Java lambda expression is treated as a function, so compiler does not create .class file.
+
+
+Functional Interface
+Lambda expression provides implementation of functional interface. An interface which has only one abstract method is called functional interface. Java provides an anotation @FunctionalInterface, which is used to declare an interface as functional interface.
+
+Why use Lambda Expression
+To provide the implementation of Functional interface.
+Less coding.
+Java Lambda Expression Syntax
+(argument-list) -> {body}  
+Java lambda expression is consisted of three components.
+
+1) Argument-list: It can be empty or non-empty as well.
+
+2) Arrow-token: It is used to link arguments-list and body of expression.
+
+3) Body: It contains expressions and statements for lambda expression.
+
+No Parameter Syntax
+______________________________________________________________________________________________________________
+
+Abstract Class : 
+
+A class that which can be created, but not implemented and instantiated known as abstract class. 
+
+Abstract class contains abstract/non-abstract methods, abstract methods needs to be overrided mandetorily by the derived class. 
+
+
+interface : 
+
+Java does not support the concept of multiple inheritance, to achieve this we need the help of interfaces. An interface contains method declaration, and the implementation can be done in the corresponding class. You can add more than one interface to the particuar class. 
+
+Difference between interface and abstract class :
+__________________________________________________
+
+
+	(i) Abstract class contains both abstract and non-abstract methods, where interface contains only abstract methods.
+
+	(ii) Interface methods are public and abstract by default. 
+
+	(iii) Multiple inheritance can be achieved by using interfaces. 
+
+	(iv) An interface can be called from anywhere to anywhere. 
+
+
+
+Java Method References
+Java provides a new feature called method reference in Java 8. Method reference is used to refer method of functional interface. It is compact and easy form of lambda expression. Each time when you are using lambda expression to just referring a method, you can replace your lambda expression with method reference. In this tutorial, we are explaining method reference concept in detail.
+
+Types of Method References
+There are following types of method references in java:
+
+Reference to a static method.
+Reference to an instance method.
+Reference to a constructor.
+
+Java Functional Interfaces
+An Interface that contains exactly one abstract method is known as functional interface. It can have any number of default, static methods but can contain only one abstract method. It can also declare methods of object class.
+
+Functional Interface is also known as Single Abstract Method Interfaces or SAM Interfaces. It is a new feature in Java, which helps to achieve functional programming approach.
+
+Lambda Expressions :
+_____________________
+
+Lambda expression is a new and important feature of Java which was included in Java SE 8. It provides a clear and concise way to represent one method interface using an expression. It is very useful in collection library. It helps to iterate, filter and extract data from collection.
+
+The Lambda expression is used to provide the implementation of an interface which has functional interface. It saves a lot of code. In case of lambda expression, we don't need to define the method again for providing the implementation. Here, we just write the implementation code.
+
+Why use Lambda Expression
+To provide the implementation of Functional interface.
+Less coding.
+Java Lambda Expression Syntax
+(argument-list) -> {body}  
+Java lambda expression is consisted of three components.
+
+1) Argument-list: It can be empty or non-empty as well.
+
+2) Arrow-token: It is used to link arguments-list and body of expression.
+
+3) Body: It contains expressions and statements for lambda expression.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+() -> {  
+//Body of no parameter lambda  
+}  
+One Parameter Syntax
+
+(p1) -> {  
+//Body of single parameter lambda  
+}  
+Two Parameter Syntax
+
+(p1,p2) -> {  
+//Body of multiple parameter lambda  
+}  
