@@ -1,0 +1,82 @@
+How the way git is going to work
+
+First the directory we are currently doing coding known as Working Directory
+
+From Working Directory, we need to send the code to staging area 
+
+1) Staging Area : This is the area, where all the files/data finalized is ready to commit and to be shared. 
+
+2) Local Repository : It is a repo which exists in your local system, and here we can commit the changes. 
+
+3) Remote Repository : Once you send the files to remote repository, then who are authorized can access, if the repo is public every one can access by default. 
+
+From the working directory, at first i need to add to staging area. 
+
+git add . -> This command allows you to add all modified files to the staging area 
+
+git commit -m "message" -> This command allows you to add the files to the local repository. 
+
+git push origin <branch_name>
+
+git push origin main  -> This command allows you to add all the files to the main branch 
+
+git status : Used to see the status of the git work flow 
+
+git diff : Used to identify the difference between old commit (vs) uncommited data 
+
+git checkout filename : Used to cancel the changes of the file 
+
+Sometimes, we need to unstage the files which we added by mistake to staging area,
+
+for that we need to do
+
+git reset HEAD "filename" : Used to unstage the given files. 
+
+Steps : 
+
+create a file using notepad as "hi.txt" and write some content into that.
+
+add the file to staging area as
+
+git add .
+
+To unstage the file, then 
+
+git reset HEAD hi.txt 
+
+To create a branch, we need to give the command as 
+
+git branch branch_name 
+
+To change to the branch 
+
+git checkout branch_name
+
+To create a branch and change into that automatically, 
+
+git checkout -b branch_name 
+
+To see the list of branches 
+
+git branch 
+
+To update all the branches of repository
+
+git remote update
+
+To delete a branch
+
+git branch -d branch_name
+
+git branch -d b1
+
+git branch -d b2 
+
+git pull origin branch_name : To get the changes from the corresponding branch, then
+git pull origin b1 
+
+then from b1 to current branch what are the coding changes are there are gets reflected
+
+
+
+
