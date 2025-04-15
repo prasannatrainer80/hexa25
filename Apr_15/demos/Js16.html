@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <script>
+            sum = (a,b) => {
+                var result = "";
+                result = parseInt(a) + parseInt(b);
+                frmCalc.result.value = result;
+            }
+            sub = (a,b) => {
+                frmCalc.result.value = a - b;
+            }
+
+            mult = (a,b) => {
+                frmCalc.result.value = a * b;
+            }
+        </script>
+    </head>
+<body>
+    <form name="frmCalc">
+        <table border="3" align="center">
+            <tr>
+                <th colspan="2">
+                    Calculation Form
+                </th>
+            </tr>
+            <tr>
+                <th>First Number</th>
+                <td>
+                    <input type="number" name="firstNo" /> 
+                </td>
+            </tr>
+            <tr>
+                <th>Second Number</th>
+                <td>
+                    <input type="number" name="secondNo" />
+                </td>
+            </tr>
+            <tr>
+                <th>Result</th>
+                <td>
+                    <input type="number" name="result" />
+                </td>
+            </tr>
+            <tr>
+                <th colspan="2">
+                    <input type="button" value="Sum" 
+                        onclick="sum(frmCalc.firstNo.value, frmCalc.secondNo.value)"
+                    />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="button" value="Sub" 
+                        onclick="sub(frmCalc.firstNo.value, frmCalc.secondNo.value)"
+                    />
+                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <input type="button" value="Mult" 
+                        onclick="mult(frmCalc.firstNo.value, frmCalc.secondNo.value)"
+                    />
+                </th>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

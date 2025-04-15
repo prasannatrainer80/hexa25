@@ -1,0 +1,103 @@
+HTML 
+
+Web Application : These are the applications, that which are to be called from various places rather than where they are created.  If you want to make any distributed or robust applications, then we need the help of web applications. 
+
+You can create web applications in 2 ways as 
+
+	(i) Scripting Languages
+
+	(ii) Programming Languages 
+
+Scripting languages are languages, that which are interpreted, during runtime they takes lot of time to execute. 
+
+Programming languages are languages that which are compiled first, during runtime they takes very less time to execute. 
+
+In web applications, we can implement both 
+
+	(i) Client-Side 
+
+		Enables you to access the application from the client
+
+		No Network traffic
+
+		Execution will be faster
+
+	(ii) Server-Side 
+
+		Enables you to access the application from server
+
+		Network traffic is high
+
+		A bit slower. 
+
+*** Any intranet based application w.r.t. No security, please opt for client-side scripting ***
+
+*** Any internet based application w.r.t. min. security please opt for both client-side and server-side scripting ***
+
+*** Any internet based application w.r.t. High Security please opt for server side scripting ***
+
+HTML (HyperText Markup Language) : Which allows you to create any sample web pages. 
+
+You can start with HTML, by using 
+
+<html>
+</html>
+
+<head> 
+</head> : Used to define the global content for the given pages. 
+
+<title>
+</title> : Used to display heading on title bar. 
+
+<body>
+</body> : Contains the actual content for the given page. 
+
+Definition Language : 
+
+Used to write any definitions and answer. 
+
+You can start with definition language, by using 
+
+<dl> : Definition Language
+
+<dt> : Definition Term
+
+<dd> : Definition Description 
+
+HTML will not perform 
+
+	-> Actions
+	-> Business Operations
+	-> Validations 
+	-> Eventbased programming
+
+To implement, we need the help of javascript. 
+
+To start with javascript, we need 
+
+<script>
+</script> 
+
+This tag allows you to enable javascript. 
+
+alert() : Used to display any message on dialog box. 
+
+onload() : This event fires once the document getting loaded.
+
+onclick() : This event fires once you click on the button
+
+=> This operator known as lambda operator used to minimize the no.of lines of code. 
+
+function show() {
+...
+...
+}
+
+show = () => {
+...
+...
+...
+}
+
+
+

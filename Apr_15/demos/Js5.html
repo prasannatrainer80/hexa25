@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script>
+            function doLogin() {
+                var userName, passCode;
+                userName = frmLogin.userName.value;
+                passCode = frmLogin.passWord.value;
+                if (userName=="Hexaware" && passCode == "Hexaware") {
+                    // alert("Correct ");
+                    window.open("http://www.google.com");
+                } else {
+                    alert("Invalid");
+                }
+            }
+        </script>
+    </head>
+<body>
+    <form name="frmLogin" action="javascript:doLogin()">
+        <center>
+            User Name : 
+            <input type="text" name="userName" autofocus /> <br/><br/>
+            Password : 
+            <input type="password" name="passWord" /> <br/><br/>
+            <input type="submit" value="Login" />
+        </center>
+    </form>
+</body>
+</html>

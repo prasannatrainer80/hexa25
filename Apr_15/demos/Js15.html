@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <script>
+            calc = (...numbers) => {
+                let sum = 0;
+                for(let i of numbers) {
+                    sum+=i;
+                }
+                return sum;
+            };
+        </script>
+    </head>
+<body>
+    <script>
+        console.log(calc(12));
+        console.log(calc(12,5));
+        console.log(calc(12,5,22));
+        console.log(calc(12,5,22,63));
+    </script>
+</body>
+</html>

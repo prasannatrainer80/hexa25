@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script>
+            function show() {
+                var c = confirm("Wish To Continue");
+                // alert(c);
+                if (c) {
+                    document.getElementById("result").innerHTML = "You Selected Yes...";
+                } else {
+                    document.getElementById("result").innerHTML = "You Selected No...";
+                }
+
+            }
+        </script>
+    </head>
+<body onload="show()">
+    <span id="result"></span>
+</body>
+</html>
